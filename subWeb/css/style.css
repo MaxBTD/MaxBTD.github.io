@@ -1,0 +1,40 @@
+body{
+	background-color:white;
+	color:white;
+	text-align:center;
+}
+
+p{
+	padding-top:100px;
+	font-size:25px;
+}
+
+img{
+	min-width:400px;
+	max-width:1000px;
+	margin-left:auto;
+	margin-right:auto;
+	display: block;
+}
+#main{
+	min-width:400px;
+	max-width:1000px;
+	margin-left:auto;
+	margin-right:auto;
+	box-shadow:1px 1px 15px black;
+	background-color:red;
+	height:2500px;
+}
+nav a{
+	display:block;
+	width:25%;
+	background-color:orange;
+	float:right;
+	text-align:center;
+	padding:30px 0px 30px 0px;
+	text-decoration:none;
+}
+
+nav a:hover{
+	background-color:yellow;
+}
