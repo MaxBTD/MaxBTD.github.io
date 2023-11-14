@@ -5,7 +5,6 @@ body{
 }
 
 p{
-	
 	font-size:25px;
 }
 
@@ -28,11 +27,11 @@ img{
 	border-radius:20px;
 }
 
-/*#mainK{
-	height:565px;
+#mainK{
+	height:800px;
 }
 
-#mainE, #mainC, #mainO{
+/*#mainE, #mainC, #mainO{
 	height:565px;
 }*/
 
@@ -103,4 +102,20 @@ nav #kontakt{
 
 #stopka{
 	text-shadow: 2px 2px 20px white;
+}
+
+#mapTekst, #map{
+	float:left;
+	width:33%;
+	margin-top:100px;
+}
+
+#mapTekst{
+	margin-left:6%;
+	text-align:center;
+}
+
+iframe{
+	border:1px  solid black;
+	border-radius:20px;
 }
