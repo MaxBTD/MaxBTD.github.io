@@ -1,40 +1,106 @@
 body{
-	background-color:white;
-	color:white;
+	background: linear-gradient(0deg, rgba(201,201,201,1) 0%, rgba(242,242,242,1) 35%, rgba(255,255,255,1) 100%);
 	text-align:center;
+	font-family: arial;
 }
 
 p{
-	padding-top:100px;
+	
 	font-size:25px;
 }
 
 img{
-	min-width:400px;
-	max-width:1000px;
+	width:600px;
+	margin:35px;
 	margin-left:auto;
 	margin-right:auto;
 	display: block;
 }
-#main{
+
+.main{
 	min-width:400px;
 	max-width:1000px;
 	margin-left:auto;
 	margin-right:auto;
-	box-shadow:1px 1px 15px black;
-	background-color:red;
-	height:2500px;
+	box-shadow:1px 1px 10px black;
+	background-color:#ccebff;
+	height:565px;
+	border-radius:20px;
 }
+
+/*#mainK{
+	height:565px;
+}
+
+#mainE, #mainC, #mainO{
+	height:565px;
+}*/
+
+.main hr{
+	border-top: 1px solid black;
+	
+}
+
+.main h1{
+	font-size:40px;
+	color:#80c804;
+	text-shadow:1px 1px 1px black;
+}
+
+.main table{
+	margin-left:8%;
+	margin-top:25px;
+}
+
+.main td, th{
+	text-align:left;
+	padding:5px;
+	padding-left:75px;
+	font-size:18px;
+}
+
+.main th{
+	font-size:25px;
+	text-align:center;
+	color:#ffc61a;
+	text-shadow:1px 1px 1px black;
+}
+
+nav{
+	background-color:#006fb7;	
+}
+
 nav a{
 	display:block;
-	width:25%;
-	background-color:orange;
+	width:33.3333%;
+	background: linear-gradient(0deg, rgba(19,142,225,1) 0%, rgba(0,111,183,1) 100%);
 	float:right;
 	text-align:center;
-	padding:30px 0px 30px 0px;
+	padding:25px 0px 25px 0px;
 	text-decoration:none;
+	color:white;
+	font-size:20px;
+	border-style: 0px 0px 2px 0px solid black;
+	font-weight:bold;
 }
 
 nav a:hover{
-	background-color:yellow;
+	background: linear-gradient(180deg, rgba(19,142,225,1) 0%, rgba(7,131,212,1) 100%);
+	box-shadow:1px 1px 10px black;
+}
+
+nav #energomax{
+	border-radius: 20px 0px 0px 0px;
+}
+
+nav #kontakt{
+	border-radius: 0px 20px 0px 0px;
+}
+
+#stopka hr{
+	margin:25px 0px 25px 0px;
+}
+
+#stopka{
+	text-shadow: 2px 2px 20px white;
 }
