@@ -4,10 +4,6 @@ body{
 	font-family: arial;
 }
 
-p{
-	font-size:25px;
-}
-
 img{
 	width:600px;
 	margin:35px;
@@ -28,7 +24,7 @@ img{
 }
 
 #mainK{
-	height:800px;
+	height:765px;
 }
 
 /*#mainE, #mainC, #mainO{
@@ -118,4 +114,13 @@ nav #kontakt{
 iframe{
 	border:1px  solid black;
 	border-radius:20px;
+}
+
+#mainE img{
+	width:450px;
+	margin:25px 0px 0px 3%;
+}
+
+#mainE{
+	height:600px;
 }
