@@ -119,8 +119,20 @@ iframe{
 #mainE img{
 	width:450px;
 	margin:25px 0px 0px 3%;
+	float:left;
 }
 
 #mainE{
 	height:600px;
+}
+
+#startTekst{
+	margin-top:15px;
+	float:left;
+	width:50%;
+}
+
+#startTekst p{
+	text-align:left;
+	padding-left:25px;
 }
