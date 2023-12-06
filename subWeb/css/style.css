@@ -24,12 +24,16 @@ img{
 }
 
 #mainK{
-	height:765px;
+	height:175px;
 }
 
-/*#mainE, #mainC, #mainO{
-	height:565px;
-}*/
+#mainE{
+	height:350px;
+}
+
+#mainO{
+	height:480px;
+}
 
 .main hr{
 	border-top: 1px solid black;
@@ -43,8 +47,8 @@ img{
 }
 
 .main table{
-	margin-left:8%;
-	margin-top:25px;
+	margin:15px auto 15px auto;
+	padding-right:65px;
 }
 
 .main td, th{
@@ -98,12 +102,15 @@ nav #kontakt{
 
 #stopka{
 	text-shadow: 2px 2px 20px white;
+	width:100%;
+	float:right;
+	margin:50px 0px 15px 0px;
 }
 
 #mapTekst, #map{
 	float:left;
 	width:33%;
-	margin-top:100px;
+	margin-top:50px;
 }
 
 #mapTekst{
@@ -116,23 +123,199 @@ iframe{
 	border-radius:20px;
 }
 
-#mainE img{
-	width:450px;
-	margin:25px 0px 0px 3%;
-	float:left;
-}
-
-#mainE{
-	height:600px;
-}
-
 #startTekst{
 	margin-top:15px;
-	float:left;
-	width:50%;
 }
 
 #startTekst p{
-	text-align:left;
 	padding-left:25px;
+}
+
+#zdjcie{
+	width:90%;
+	height:150px;
+	background-color:white;
+	margin-left:auto;
+	margin-right:auto;
+	border-radius:15px;
+}
+
+#startTekst a{
+	display:block;
+	background: linear-gradient(0deg, rgba(19,142,225,1) 0%, rgba(0,111,183,1) 100%);
+	text-align:center;
+	padding:17px 7px 17px 7px;
+	text-decoration:none;
+	color:white;
+	font-size:17px;
+	border-style: 0px 0px 2px 0px solid black;
+	font-weight:bold;
+	border-radius:25px;
+	width:200px;
+	margin-left:auto;
+	margin-right:auto;
+} 
+
+#startTekst a:hover{
+	box-shadow:1px 1px 5px black;
+	background: linear-gradient(180deg, rgba(19,142,225,1) 0%, rgba(7,131,212,1) 100%);
+}
+
+.oNasBtn {
+	height:225px;
+	width:225px;
+	background: linear-gradient(0deg, rgba(19,142,225,1) 0%, rgba(0,111,183,1) 100%);
+	float:left;
+	margin:20px;
+	border-radius:15px;
+	color:white;
+	font-size:25px;
+	text-decoration:none;
+	text-align:center;
+	//line-height:225px;
+}
+
+.oNasBtn:hover{
+	box-shadow:1px 1px 5px black;
+	background: linear-gradient(180deg, rgba(19,142,225,1) 0%, rgba(7,131,212,1) 100%);
+}
+
+#oNasBtns {
+	margin-left:10%;
+}
+
+.material-symbols-outlined {
+	padding:50px 0px 25px 0px;
+	scale:2;
+  font-variation-settings:
+  'FILL' 1,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 24
+}
+
+#trescONas{
+	clear:both;
+	min-width:400px;
+	max-width:1000px;
+	margin:325px auto 0px auto;
+	display:block
+}
+
+#trescONas p{
+	padding:5px 5px 5px 5px;
+}
+
+.zdjcONas{
+	width:250px;
+	height:375px;
+	background-color:white;
+	border-radius:20px;
+	box-shadow:1px 1px 10px black;
+}
+
+.glownaBtns{
+	width:50%;
+	float:left;
+	margin-top:50px;
+}
+
+h2{
+	font-size:25px;
+	color:#ffc61a;
+	text-shadow:1px 1px 1px black;
+}
+
+.glownaB{
+	background: linear-gradient(0deg, rgba(235,235,235,1) 0%, rgba(242,242,242,1) 20%, rgba(250,250,250,1) 100%);
+	border-radius:15px;
+	margin:0px 25px 0px 25px;
+	padding:1px 0px 20px 0px;
+	box-shadow: 1px 1px 5px black;
+}
+
+#pracownicy, #jakosc, #ceny{
+	width:71%;
+	float:left;
+	height:375px;
+	padding-top:80px;
+}
+
+#trescONas h2{
+	padding-left:25px;
+}
+
+#jakosc{
+	float:right;
+}
+
+#trescONas{
+	text-align:center;
+}
+
+.zdjDiv{
+	width:28%;
+	float:right;
+	padding-top:80px;
+}
+
+#zdjLeft{
+	float:left;
+}
+
+#logoTekst{
+	margin:-75px 0px 35px 75px;
+	font-size:25px;
+	font-weight:bold;
+}
+
+p{
+	font-size:18px;
+	text-align:center;
+}
+
+sup{
+	font-weight:bold
+}
+
+#startTekst #btnKontaktGlowna{
+	padding:17px 12px 17px 12px;
+}
+
+.onasTlo{
+    background-color: #e0f3ff;
+    padding: 10px 0px 5px 0px;
+    width: 95%;
+    border-radius: 25px;
+    margin-top: 75px;
+    margin-left: 22px;
+    box-shadow: 1px 1px 10px black;
+}
+
+#mapTlo{
+	margin-top:8px;
+	
+}
+
+#map{
+	float:right;
+	margin-right:24%;
+}
+
+#glownaTlo{
+	margin-top:50px;
+	width:100%;
+	margin-left:0px;
+}
+
+#glownaTlo h2{
+	margin-top:10px;
+}
+
+#trescKontakt{
+	min-width:400px;
+	max-width:1000px;
+	margin-left:auto;
+	margin-right:auto;
+	display:block;
 }
