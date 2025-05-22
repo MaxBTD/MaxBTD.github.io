@@ -20,16 +20,32 @@
 
 <style>
     .navBtn {
-        border: 1px solid black;
-        padding: 5px 75px 50px 75px;
-        font-size: 35px;
+        padding: 5px 65px 50px 65px;
+        font-size: 55px;
         margin: 0 10px;
-        background-color: brown;
         display: inline-block;
         text-decoration: none;
-        color:white;
-        width: 100px;
+        color:#f3e8e0;
+        width: 145px;
         font-family: "Aubrey", system-ui;
-        font-style:normal;
+        font-style: normal;
+        text-align: center;
+        background-image: url("btnWood.png");
+        background-position: center;
+        background-size: cover;
+        filter: saturate(1.75) drop-shadow(10px 10px 5px #0000004b);
+        letter-spacing: -2px;
+    }
+
+    @media (max-width: 1700px) {
+        .navBtn{
+            padding: 5px 20px 50px 20px;
+        }
+    }
+
+    @media (max-width: 1100px) {
+        .navBtn{
+            padding: 5px 0 50px 0;
+        }
     }
 </style>

@@ -43,7 +43,7 @@
             {/each}
         </nav>
         <div id="pageContent">
-            <button onclick={darkModeFlip}> FLIP TO DARK MODE</button>
+            <button onclick={darkModeFlip} disabled={tweenSpeen.current === 0 || tweenSpeen.current === 540 ? false : true}> FLIP TO DARK MODE</button>
             {@render children()}
         </div>
     </div>
@@ -55,16 +55,13 @@
     }
 
     #mainContent {
-        background-color: red;
-        width:60%;
-        margin: 500px auto 0 auto;
+        width:65%;
+        margin: 650px auto 0 auto;
         text-align: center;
         height: 1000px;
     }
 
     #pageNav {
-        background-color: beige;
-        border: 1px solid black;
         z-index: 1;
     }
 
@@ -87,12 +84,17 @@
     }
 
     #pageContent {
-        position: absolute;
+        position: relative;
         z-index: 3;
-        background-color: aqua;
-        height: 300px;
-        width: 58%;
+        height: 1500px;
+        width: 98%;
         padding: 10px;
         transform: translateY(-45px);
+        margin: 0 auto;
+        background-image: url("mainPlank.png");
+        background-repeat: repeat-y;
+        filter: saturate(1.75) drop-shadow(0 0 15px #00000069);
+        border: 10px solid #352721;
+        border-radius: 1%;
     }
 </style>
