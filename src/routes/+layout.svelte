@@ -8,6 +8,8 @@
     const tabs = ["Main", "Socials", "Projects", "Art"];
     let darkMode = $state(false);
 
+    
+
     let tweenSpeen = new Tween(0, {
         duration: 2000,
         easing: bounceOut
@@ -21,7 +23,7 @@
 </script>
 
 <div id="mainDiv">
-    <img src="skyBg.png"
+    <img src="skyBgBig.png"
     alt="sky"
     id="bgBackground"
     class={darkMode ? "darkMode" : ""}
@@ -29,7 +31,7 @@
         transform: rotate({tweenSpeen.current}deg)
     "/>
 
-    <img src="bg.png"
+    <img src="bg.gif"
     alt="beach"
     id="bgForeground"
     style="
@@ -50,8 +52,8 @@
 </div>
 
 <style>
-    :global(body) {
-        background-color: #533f38;
+    .darkMode {
+        background-color: #5f647f;
     }
 
     #mainContent {
@@ -71,16 +73,16 @@
         top: 0;
         left: 0;
         width: 100%;
-        height: 700px;
+        height: 1250px;
     }
 
     #bgBackground {
         position: absolute;
         z-index: -1;
-        top: 0;
+        top: -740px;
         left: 0;
         width: 100%;
-        height: 700px;
+        height: 2600px;
     }
 
     #pageContent {
