@@ -2,11 +2,13 @@
     import { bounceOut } from "svelte/easing";
     import { elasticOut } from "svelte/easing";
     import { Tween } from "svelte/motion";
+    import { fade } from "svelte/transition";
     import NavBtn from './NavBtn.svelte';
 	let { children } = $props();
 
     const tabs = ["Main", "Socials", "Projects", "Art"];
     let darkMode = $state(false);
+    let canToggle = $state(true);
 
     
 
@@ -38,14 +40,23 @@
         filter: hue-rotate({tweenSpeen.current/3}deg) brightness({100-(tweenSpeen.current/540)*50}%);
     "/>
 
+    {#if tweenSpeen.current === 0 || tweenSpeen.current === 540 ? true : false}
+    <button id="darkModeToggle"
+     onclick={darkModeFlip}
+      style="filter: {darkMode ? "saturate(0%) contrast(75%) drop-shadow(0 0 5px #ffffff)" : "none"}" 
+      in:fade={{ duration: 2000, delay: 1000}}
+      aria-label="toggle dark mode">
+
+    </button>
+    {/if}
+
     <div id="mainContent">
         <nav id="pageNav">
             {#each tabs as tab}
-                <NavBtn {tab}/>
+                <NavBtn {tab} {darkMode}/>
             {/each}
         </nav>
-        <div id="pageContent">
-            <button onclick={darkModeFlip} disabled={tweenSpeen.current === 0 || tweenSpeen.current === 540 ? false : true}> FLIP TO DARK MODE</button>
+        <div id="pageContent" style="filter: drop-shadow(0 0 15px #00000069) {darkMode ? "" : "saturate(1.75)"}">
             {@render children()}
         </div>
     </div>
@@ -95,8 +106,21 @@
         margin: 0 auto;
         background-image: url("mainPlank.png");
         background-repeat: repeat-y;
-        filter: saturate(1.75) drop-shadow(0 0 15px #00000069);
         border: 10px solid #352721;
         border-radius: 1%;
+    }
+
+    #darkModeToggle {
+        background-color:#ffffff00;
+        background-image: url("darkModeText.png");
+        background-position: 1px 5px;
+        border: none;
+        width: 245px;
+        height: 245px;
+        border-radius: 100%;
+        cursor:pointer;
+        position: absolute;
+        left:407px;
+        top:59px;
     }
 </style>

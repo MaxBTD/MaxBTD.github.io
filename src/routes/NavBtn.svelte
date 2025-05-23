@@ -2,7 +2,7 @@
 <script>
     import { elasticOut } from "svelte/easing";
     import { Tween } from "svelte/motion";
-    let { tab } = $props();
+    let { tab, darkMode } = $props();
 
     let btnTween = new Tween(0, {
         duration: 2000,
@@ -16,7 +16,13 @@
 
 </script>
 
-<a href='/{tab === 'Main' ? '' : tab}' class="navBtn" onmouseenter={() => btnPopUp(25)} onmouseleave={() => btnPopUp(0)} style="transform:translateY(-{btnTween.current}px)">{tab}</a>
+<a href='/{tab === 'Main' ? '' : tab}' 
+    class="navBtn" onmouseenter={() => btnPopUp(25)} 
+    onmouseleave={() => btnPopUp(0)} 
+    style="transform:translateY(-{btnTween.current}px);
+        filter: drop-shadow(10px 10px 5px #0000004b) {darkMode ? "" : "saturate(1.75)"};">
+    {tab}
+</a>
 
 <style>
     .navBtn {
@@ -33,7 +39,6 @@
         background-image: url("btnWood.png");
         background-position: center;
         background-size: cover;
-        filter: saturate(1.75) drop-shadow(10px 10px 5px #0000004b);
         letter-spacing: -2px;
     }
 
