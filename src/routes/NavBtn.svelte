@@ -11,13 +11,12 @@
 
     function btnPopUp(d){
         btnTween.target = d;
-        console.log(btnTween.current);
     }
-
 </script>
 
-<a href='/{tab === 'Main' ? '' : tab}' 
-    class="navBtn" onmouseenter={() => btnPopUp(25)} 
+<a href='/{tab === 'About' ? '' : tab}' 
+    class="navBtn"
+    onmouseenter={() => btnPopUp(25)} 
     onmouseleave={() => btnPopUp(0)} 
     style="transform:translateY(-{btnTween.current}px);
         filter: drop-shadow(10px 10px 5px #0000004b) {darkMode ? "" : "saturate(1.75)"};">
