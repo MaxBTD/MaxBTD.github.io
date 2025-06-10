@@ -1,5 +1,5 @@
 <script>
-    export const prerender = true;
+        export const prerender = true;
 
     import { bounceOut } from "svelte/easing";
     import { elasticOut } from "svelte/easing";
