@@ -1,4 +1,4 @@
-/*import adapter from '@sveltejs/adapter-static';
+import adapter from '@sveltejs/adapter-static';
 
 const config = {
 	kit: {
@@ -11,12 +11,4 @@ const config = {
 	}
 };
 
-export default config;*/
-
-import adapter from '@sveltejs/adapter-vercel';
- 
-export default {
-  kit: {
-    adapter: adapter(),
-  },
-};
+export default config;

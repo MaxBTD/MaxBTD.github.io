@@ -61,7 +61,7 @@
 
 <style>
     .socialBoard{
-        background-image: url("socialCube.webp");
+        background-image: url("/socialCube.webp");
         filter: brightness(80%) drop-shadow(5px 5px 10px #0000008f);
         width: 350px;
         margin: -20px 25px 0 25px;
@@ -111,7 +111,7 @@
         top:-10px;
         border-radius: 1cap;
         filter: drop-shadow(0 10px 10px #00000085) brightness(0.9) saturate(0.9);
-        background-image: url("mainPlank.png");
+        background-image: url("/mainPlank.png");
         user-select: none;
     }
 

@@ -35,7 +35,7 @@
         font-family: "Aubrey", system-ui;
         font-style: normal;
         text-align: center;
-        background-image: url("btnWood.png");
+        background-image: url("/btnWood.png");
         background-position: center;
         background-size: cover;
         letter-spacing: -2px;

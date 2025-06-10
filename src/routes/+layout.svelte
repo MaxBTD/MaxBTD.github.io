@@ -1,8 +1,6 @@
 <script>
-    export const prerender = true;
-
     import { bounceOut } from "svelte/easing";
-    import { elasticOut } from "svelte/easing";np
+    import { elasticOut } from "svelte/easing";
     import { Tween } from "svelte/motion";
     import { fade } from "svelte/transition";
     import NavBtn from './NavBtn.svelte';
@@ -100,7 +98,7 @@
         position: absolute;
         z-index: -1;
 
-        background-image: url("plants.webp");
+        background-image: url("/plants.webp");
         background-size: 2100px 1200px;
         background-position: -75px 0;
         animation: bgMove 20s ease-in-out infinite;
@@ -169,7 +167,7 @@
         width: 100%;
         transform: translateY(-45px);
         margin: 0 auto;
-        background-image: url("mainPlank.png");
+        background-image: url("/mainPlank.png");
         background-repeat: repeat;
         
         border: 10px solid #352721;
@@ -181,7 +179,7 @@
 
     #darkModeToggle {
         background-color:#ffffff00;
-        background-image: url("darkModeText.png");
+        background-image: url("/darkModeText.png");
         background-position: 1px 5px;
         border: none;
         width: 245px;

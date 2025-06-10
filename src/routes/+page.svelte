@@ -69,7 +69,7 @@ You're not supposed to see this part. please leave
         <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/Animated-Flag-Poland.gif" alt="polishFlag" style="float: left;"/>
         <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/Animated-Flag-Poland.gif" alt="polishFlag" style="float: right;"/>
     </div>
-    <iframe style="border-radius:1cap;" width="600" height="340" src="" frameborder="0" allowfullscreen title="Latest Video"></iframe>
+    <iframe style="border-radius:1cap;" width="600" height="340" src="https://www.youtube.com/embed?listType=playlist&list=UU5BIhkDIJcQXzjGAezS1JGA" frameborder="0" allowfullscreen title="Latest Video"></iframe>
     
 </div>
 <div>
@@ -90,7 +90,7 @@ You're not supposed to see this part. please leave
     #disclaimer {
         
         width: 101.5%;
-        background-image: url("smolCaution.png");
+        background-image: url("/smolCaution.png");
         height: 485px;
         margin: 300px auto 100px auto;
         position: relative;
@@ -188,7 +188,7 @@ You're not supposed to see this part. please leave
         top:-10px;
         border-radius: 1cap;
         filter: drop-shadow(0 10px 10px #00000085) brightness(0.9) saturate(0.9);
-        background-image: url("mainPlank.png");
+        background-image: url("/mainPlank.png");
         user-select: none;
     }
 
