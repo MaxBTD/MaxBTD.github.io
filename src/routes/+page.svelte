@@ -1,3 +1,18 @@
+<script>
+    import { onMount } from 'svelte';
+    let mounted = $state(false);
+
+    onMount(() =>{
+        mounted = true;
+    });
+
+    function bushClicked(){
+        if(mounted){
+            document.getElementById("maxBehindBush").src = "behindBush.webp";
+        }
+    }
+</script>
+
 <div class="title">
                 <h1>ABOUT</h1>
             </div>
@@ -36,16 +51,44 @@ You're not supposed to see this part. please leave
      and had to cut ties with the monks, fast foward few months and now im here.
 </p>
 </div>
-<div class="mainText" style="margin-bottom: 75px;">
+<div class="mainText" style="margin-bottom: 115px;">
     <h2>Graphic Design Expertise</h2>
     <hr class="mainHR"/>
     <p style="margin-bottom:-100px;">Here's one of my most recent pieces</p>
     <img src="grafic.webp" alt="graficeDeign" id="loberGraphic" style="z-index: 0;"/>
-    <sub style="z-index: -1;"><a id="loberCredit" href="https://fishing.tas.gov.au/species/rock-lobster-southern" target="_blank">[ Lobster Graphic Credit ]</a></sub>
+    <img src="lights.webp" alt="theatre lights" id="lightsLober" style="z-index: 1;"/>
+    <sub ><a id="loberCredit" 
+        href="https://fishing.tas.gov.au/species/rock-lobster-southern"
+        target="_blank" 
+        style="z-index: 3; position:relative; width:fit-content; margin:0 auto;">[ Lobster Graphic Credit ]</a></sub>
 </div>
+<div class="mainText" style="margin-bottom: 200px;">
+    <h2>Latest Youtube Video</h2>
+    <hr class="mainHR"/>
+    <div style="width: 100%; position:absolute; top:150px">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/Animated-Flag-Poland.gif" alt="polishFlag" style="float: left;"/>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/Animated-Flag-Poland.gif" alt="polishFlag" style="float: right;"/>
+    </div>
+    <iframe style="border-radius:1cap;" width="600" height="340" src="https://www.youtube.com/embed?listType=playlist&list=UU5BIhkDIJcQXzjGAezS1JGA" frameborder="0" allowfullscreen title="Latest Video"></iframe>
+    
+</div>
+<div>
+    <img src="bush.png" alt="bushWITHNOMAXDONTCHECK" width="150" height="500" style="bottom:0; margin:-80px 0;  z-index:0; position:absolute; left:0; filter:drop-shadow(5px 5px 10px #121212);"/>
+    <img src="bush.png" alt="bushWITHNOMAXDONTCHECK" width="300" height="200" style="bottom:0; margin:0;  z-index:0; position:absolute; left:125px; filter:drop-shadow(5px 5px 10px #121212);"/>
+    <img src="bush.png" alt="bushWITHNOMAXDONTCHECK" width="150" height="500" style="bottom:0; margin:-80px 0;  z-index:0; position:absolute; right:150px; filter:drop-shadow(5px 5px 10px #121212);"/>
+    <img src="bush.png" alt="bushWITHNOMAXDONTCHECK" width="150" height="500" style="bottom:0; margin:-80px 0;  z-index:0; position:absolute; right:0; filter:drop-shadow(5px 5px 10px #121212);"/>
+    <div style="filter:drop-shadow(5px 5px 15px black);">
+        <button style="background-color:transparent; border:none; cursor:pointer; position: absolute; filter:saturate(0.6); z-index:1; margin:-10px 0 25px 40px; opacity:0%;" onclick={bushClicked} class="bushAnimation">
+        <img src="behindBush.webp" alt="bushLober" id="maxBehindBush"/>
+        </button>
+        <img src="bush.png" alt="bushWITHNOMAXDONTCHECK" width="350" style="margin:-80px 0;  z-index:0; position:relative;"/>
+    </div>
+</div>
+
 
 <style>
     #disclaimer {
+        
         width: 101.5%;
         background-image: url("smolCaution.png");
         height: 485px;
@@ -55,7 +98,7 @@ You're not supposed to see this part. please leave
         animation: slide 2s linear infinite;
         z-index: 0;
 
-        filter: drop-shadow(0 5px 10px black);
+        filter: drop-shadow(0 5px 10px #000000);
     }
 
     #builderMax {
@@ -200,5 +243,49 @@ You're not supposed to see this part. please leave
 
     .mainText a:hover{
         font-weight: bold;
+    }
+
+    #lightsLober{
+        position: absolute;
+        left: -30px;
+        top: 275px;
+    }
+
+    .bushAnimation{
+    }
+
+    @keyframes popUp{
+        0% {
+            opacity: 0%;
+            margin-top: -10px;
+            z-index: -1;
+        }
+        4%{
+            opacity: 0%;
+        }
+        6%{
+            opacity:100%;
+        }
+        17%{
+            margin-top: -150px;
+        }
+        98%{
+            margin-top: -150px;
+            opacity: 100%;
+            z-index: -1;
+        }
+        100%{
+            margin-top: -10px;
+            opacity: 0%;
+            z-index: -1;
+        }
+
+    }
+
+    .bushAnimation:focus {
+            animation: popUp 8.5s ease-in-out backwards;
+    }
+    .bushAnimation:active {
+            animation: none;
     }
 </style>

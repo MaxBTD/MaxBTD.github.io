@@ -8,11 +8,11 @@
     }
 </script>
 
-<div class="title">
+<div class="title" style="z-index: 6;">
     <h1>SOCIALS</h1>
 </div>
 <div id="socialsPage">
-    <div class="socialBoard">
+    <div class="socialBoard" style="z-index: 5;">
         <a href="https://www.youtube.com/@MaxBitesTheDust" target="_blank">
             <div><img src="Youtube.svg" alt="YT"/>
             <h3>Youtube</h3></div>
@@ -20,35 +20,35 @@
         </a>    
         
     </div>
-    <div class="socialBoard">
+    <div class="socialBoard" style="z-index: 4;">
         <a href="https://x.com/MaxBitesTheDust" target="_blank">
             <div><img src="Twitter.svg" alt="TWT"/>
             <h3>Twitter</h3></div>
             
         </a>
     </div>
-    <div class="socialBoard">
+    <div class="socialBoard" style="z-index: 3;">
         <a href="https://www.twitch.tv/maxbitesthedust" target="_blank">
             <div><img src="Twitch.svg" alt="TWCH"/>
             <h3>Twitch</h3></div>
             
         </a>
     </div>
-    <div class="socialBoard">
+    <div class="socialBoard" style="z-index: 2;">
         <a href="https://bsky.app/profile/maxbitesthedust.bsky.social" target="_blank">
             <div><img src="Bluesky.svg" alt="BS"/>
             <h3>Bluesky</h3></div>
             
         </a>
     </div>
-    <div class="socialBoard">
+    <div class="socialBoard" style="z-index: 1;">
         <a href="https://www.planetminecraft.com/member/maxbtd/" target="_blank">
             <div><img src="Planet Minecraft.svg" alt="PM"/>
             <h3>Planet Minecraft</h3></div>
             
         </a>
     </div>
-    <div class="socialBoard">
+    <div class="socialBoard" style="z-index: 0;">
         <a href="https://artfight.net/~MaxBTD" target="_blank">
             <div><img src="ArtFight.png" alt="AF"/>
             <h3>ArtFight</h3></div>
@@ -61,19 +61,21 @@
 
 <style>
     .socialBoard{
-        background-image: url("mainPlank.png");
-        filter: brightness(100%);
+        background-image: url("socialCube.webp");
+        filter: brightness(80%) drop-shadow(5px 5px 10px #0000008f);
         width: 350px;
-        margin: 0 25px;
+        margin: -20px 25px 0 25px;
         float: left;
         padding-top: 100px;
-        padding-bottom: 0;
+        padding-bottom: 25px;
         height: 250px;
         text-align: center;
+        position: relative;
     }
 
     .socialBoard > a {
         text-decoration: none;
+        filter: brightness(130%);
         color: white;
         font-size: 35px;
         font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
@@ -115,7 +117,6 @@
 
     .title>h1{
         display: block;
-        vertical-align:middle;
         display: table-cell;
         font-size: 125px;
         transform: scaley(0.9) scalex(1.5);
@@ -124,5 +125,19 @@
         background: -webkit-linear-gradient(#686868, #eee, #686868);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
+    }
+
+    .socialBoard:hover{
+        animation: jumpUp 0.25s ease-in-out;
+        top:-10px
+    }
+
+    @keyframes jumpUp{
+        0%{
+            top:0px
+        }
+        100%{
+            top:-10px
+        }
     }
 </style>

@@ -1,4 +1,6 @@
 <script>
+    export const prerender = true;
+
     import { bounceOut } from "svelte/easing";
     import { elasticOut } from "svelte/easing";
     import { Tween } from "svelte/motion";
@@ -93,10 +95,33 @@
     rect{
         background-color: #e3d378;
         width: 100%;
-        top:1200px;
+        top:1050px;
         left:0;
         position: absolute;
         z-index: -1;
+
+        background-image: url("plants.webp");
+        background-size: 2100px 1200px;
+        background-position: -75px 0;
+        animation: bgMove 20s ease-in-out infinite;
+    }
+
+    @keyframes bgMove{
+        0%{
+            background-position: -75px 0;
+        }
+        25%{
+            background-position: -137px 10px;
+        }
+        50%{
+            background-position: -75px 0;
+        }
+        75%{
+            background-position: -137px -10px;
+        }
+        100%{
+            background-position: -75px 0;
+        }
     }
 
     :global(html) {
@@ -145,7 +170,7 @@
         transform: translateY(-45px);
         margin: 0 auto;
         background-image: url("mainPlank.png");
-        background-repeat: repeat-y;
+        background-repeat: repeat;
         
         border: 10px solid #352721;
         border-radius: 1%;
