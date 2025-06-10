@@ -1,8 +1,8 @@
 <script>
-        export const prerender = true;
+    export const prerender = true;
 
     import { bounceOut } from "svelte/easing";
-    import { elasticOut } from "svelte/easing";
+    import { elasticOut } from "svelte/easing";np
     import { Tween } from "svelte/motion";
     import { fade } from "svelte/transition";
     import NavBtn from './NavBtn.svelte';

@@ -69,7 +69,7 @@ You're not supposed to see this part. please leave
         <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/Animated-Flag-Poland.gif" alt="polishFlag" style="float: left;"/>
         <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/Animated-Flag-Poland.gif" alt="polishFlag" style="float: right;"/>
     </div>
-    <iframe style="border-radius:1cap;" width="600" height="340" src="https://www.youtube.com/embed?listType=playlist&list=UU5BIhkDIJcQXzjGAezS1JGA" frameborder="0" allowfullscreen title="Latest Video"></iframe>
+    <iframe style="border-radius:1cap;" width="600" height="340" src="" frameborder="0" allowfullscreen title="Latest Video"></iframe>
     
 </div>
 <div>
