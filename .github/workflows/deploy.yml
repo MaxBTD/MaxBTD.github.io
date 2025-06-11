@@ -28,7 +28,7 @@ jobs:
 
       - name: build
         env:
-          BASE_PATH: '/MaxBTD.github.io'
+          BASE_PATH: '/'
         run: |
           npm run build
 
@@ -48,7 +48,7 @@ jobs:
 
     environment:
       name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+      url: MaxBTD.github.io
 
     steps:
       - name: Deploy
