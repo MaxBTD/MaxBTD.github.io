@@ -28,7 +28,7 @@ jobs:
 
       - name: build
         env:
-          BASE_PATH: '/maxbtd.github.io'
+          BASE_PATH: '/'
         run: |
           npm run build
 
