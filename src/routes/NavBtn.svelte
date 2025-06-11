@@ -1,4 +1,3 @@
-
 <script>
     import { elasticOut } from "svelte/easing";
     import { Tween } from "svelte/motion";
