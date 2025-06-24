@@ -41,7 +41,7 @@
 <div id="mainDiv">
     <!--<audio preload="auto" autoplay="true" loop="true" hidden="true" volume={0.2}>
         <source src="waves.mp3" type="audio/mpeg"> </audio>-->
-    <img src="skyBgBig.png"
+    <img src="skyBgBig.webp"
     alt="sky"
     id="bgBackground"
     class={darkMode ? "darkMode" : ""}
@@ -167,7 +167,7 @@
         width: 100%;
         transform: translateY(-45px);
         margin: 0 auto;
-        background-image: url("/mainPlank.png");
+        background-image: url("/mainPlank.webp");
         background-repeat: repeat;
         
         border: 10px solid #352721;
@@ -179,7 +179,7 @@
 
     #darkModeToggle {
         background-color:#ffffff00;
-        background-image: url("/darkModeText.png");
+        background-image: url("/darkModeText.webp");
         background-position: 1px 5px;
         border: none;
         width: 245px;

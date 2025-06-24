@@ -41,7 +41,7 @@ You're not supposed to see this part. please leave
             </p>
         </div>
         <div id="disclaimerImgDiv" style="width: 29%; float:right;">
-            <img src="builderMax.gif" alt="builder Max gif" id="builderMax"/>
+            <img src="builderMax.webp" alt="builder Max gif" id="builderMax"/>
         </div>
     </div>
 </div>
@@ -73,15 +73,15 @@ You're not supposed to see this part. please leave
     
 </div>
 <div>
-    <img src="bush.png" alt="bushWITHNOMAXDONTCHECK" width="150" height="500" style="bottom:0; margin:-80px 0;  z-index:0; position:absolute; left:0; filter:drop-shadow(5px 5px 10px #121212);"/>
-    <img src="bush.png" alt="bushWITHNOMAXDONTCHECK" width="300" height="200" style="bottom:0; margin:0;  z-index:0; position:absolute; left:125px; filter:drop-shadow(5px 5px 10px #121212);"/>
-    <img src="bush.png" alt="bushWITHNOMAXDONTCHECK" width="150" height="500" style="bottom:0; margin:-80px 0;  z-index:0; position:absolute; right:150px; filter:drop-shadow(5px 5px 10px #121212);"/>
-    <img src="bush.png" alt="bushWITHNOMAXDONTCHECK" width="150" height="500" style="bottom:0; margin:-80px 0;  z-index:0; position:absolute; right:0; filter:drop-shadow(5px 5px 10px #121212);"/>
+    <img src="bush.webp" alt="bushWITHNOMAXDONTCHECK" width="150" height="500" style="bottom:0; margin:-80px 0;  z-index:0; position:absolute; left:0; filter:drop-shadow(5px 5px 10px #121212);"/>
+    <img src="bush.webp" alt="bushWITHNOMAXDONTCHECK" width="300" height="200" style="bottom:0; margin:0;  z-index:0; position:absolute; left:125px; filter:drop-shadow(5px 5px 10px #121212);"/>
+    <img src="bush.webp" alt="bushWITHNOMAXDONTCHECK" width="150" height="500" style="bottom:0; margin:-80px 0;  z-index:0; position:absolute; right:150px; filter:drop-shadow(5px 5px 10px #121212);"/>
+    <img src="bush.webp" alt="bushWITHNOMAXDONTCHECK" width="150" height="500" style="bottom:0; margin:-80px 0;  z-index:0; position:absolute; right:0; filter:drop-shadow(5px 5px 10px #121212);"/>
     <div style="filter:drop-shadow(5px 5px 15px black);">
         <button style="background-color:transparent; border:none; cursor:pointer; position: absolute; filter:saturate(0.6); z-index:1; margin:-10px 0 25px 40px; opacity:0%;" onclick={bushClicked} class="bushAnimation">
         <img src="behindBush.webp" alt="bushLober" id="maxBehindBush"/>
         </button>
-        <img src="bush.png" alt="bushWITHNOMAXDONTCHECK" width="350" style="margin:-80px 0;  z-index:0; position:relative;"/>
+        <img src="bush.webp" alt="bushWITHNOMAXDONTCHECK" width="350" style="margin:-80px 0;  z-index:0; position:relative;"/>
     </div>
 </div>
 
@@ -90,7 +90,7 @@ You're not supposed to see this part. please leave
     #disclaimer {
         
         width: 101.5%;
-        background-image: url("/smolCaution.png");
+        background-image: url("/smolCaution.webp");
         height: 485px;
         margin: 300px auto 100px auto;
         position: relative;
@@ -188,19 +188,19 @@ You're not supposed to see this part. please leave
         top:-10px;
         border-radius: 1cap;
         filter: drop-shadow(0 10px 10px #00000085) brightness(0.9) saturate(0.9);
-        background-image: url("/mainPlank.png");
+        background-image: url("/mainPlank.webp");
         user-select: none;
     }
 
     .title>h1{
         display: block;
-        vertical-align:middle;
         display: table-cell;
         font-size: 125px;
         transform: scaley(0.9) scalex(1.5);
         font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 
         background: -webkit-linear-gradient(#686868, #eee, #686868);
+        background-clip: text;
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
     }
