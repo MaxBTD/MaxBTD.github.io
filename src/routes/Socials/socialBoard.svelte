@@ -12,7 +12,7 @@
 
 <style>
     .socialBoard{
-        background-image: url("/socialCube1.webp");
+        background-image: url("/socialCube.webp");
         filter: drop-shadow(5px 5px 10px #0000008f);
         width: 350px;
         margin: -20px 25px 0 25px;
