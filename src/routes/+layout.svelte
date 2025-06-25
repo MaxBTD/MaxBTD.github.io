@@ -49,12 +49,15 @@
         transform: rotate({tweenSpeen.current}deg)
     "/>
 
-    <img src="bg.gif"
+    <video autoplay muted loop id="bgForeground" style="
+        filter: hue-rotate({tweenSpeen.current/3}deg) brightness({100-(tweenSpeen.current/540)*50}%); ">
+        <source src="bg.webm" type="video/mp4">
+    </video>
+
+    <!-- <img src="bg.webm"
     alt="beach"
     id="bgForeground"
-    style="
-        filter: hue-rotate({tweenSpeen.current/3}deg) brightness({100-(tweenSpeen.current/540)*50}%);
-    "/>
+    /> -->
     
 
     <rect style="
