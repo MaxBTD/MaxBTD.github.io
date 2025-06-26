@@ -1,7 +1,18 @@
+<script>
+    import ArtFrame from "./artFrame.svelte";
+</script>
+
+
 <div class="title">
                 <h1>ART</h1>
             </div>
-<p>ART PAGE</p>
+<div class="mainArtContent">
+    <ArtFrame />
+
+    <h3>[ More coming soon... ]</h3>
+</div>
+
+
 
 <style>
     .title{
@@ -18,7 +29,6 @@
         background-image: url("/mainPlank.webp");
         user-select: none;
     }
-
     .title>h1{
         display: block;
         display: table-cell;
@@ -31,4 +41,19 @@
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
     }
+
+    .mainArtContent{
+        margin: 50px 0;
+    }
+
+    .mainArtContent>h3{
+        color: #ffffff90;
+        clear: both;
+        position: relative;
+        margin-top: 50px;
+        top: 40px;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        user-select: none;
+    }
+        
 </style>

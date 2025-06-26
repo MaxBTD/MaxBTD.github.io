@@ -41,6 +41,7 @@
         position: relative;
         top: 80px;
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        user-select: none;
     }
 
     .title{

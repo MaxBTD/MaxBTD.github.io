@@ -217,6 +217,7 @@ You're not supposed to see this part. please leave
         text-decoration: none;
         color: #ffffff90;
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        transition: 0.2s;
     }
 
     .mainHR{

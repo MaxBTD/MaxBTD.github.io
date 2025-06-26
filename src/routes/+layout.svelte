@@ -36,7 +36,20 @@
         observer.observe(pageContent);
     });
     
+    function viewerExit(){
+        if(mounted){
+            document.getElementById("imgViewerImg").style.opacity = "0";
+            document.getElementById("imgViewer").style.opacity = "0";
+            document.getElementById("imgViewer").style.visibility = "hidden";
+        }
+    }
 </script>
+
+<div id="imgViewer">
+    <button onclick="{viewerExit}"></button>
+    <img src="grafic.webp" alt="currentpicture" id="imgViewerImg"/>
+    <p>[ Click off image to close ]</p>
+</div>
 
 <div id="mainDiv">
     <!--<audio preload="auto" autoplay="true" loop="true" hidden="true" volume={0.2}>
@@ -53,12 +66,6 @@
         filter: hue-rotate({tweenSpeen.current/3}deg) brightness({100-(tweenSpeen.current/540)*50}%); ">
         <source class="bgForeground" src="bg.webm" type="video/mp4">
     </video>
-
-    <!-- <img src="bg.webm"
-    alt="beach"
-    id="bgForeground"
-    /> -->
-    
 
     <rect style="
         height: {pageHeight>1000 ? pageHeight+75 : 1000}px;
@@ -256,4 +263,52 @@
     background: #ffffff;
     }
     
+    #imgViewer{
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        background-color: #0000005F;
+        z-index: 999;
+        top:0;
+        left: 0;
+        transition: 0.2s;
+        visibility: hidden;
+    }
+
+    #imgViewer>img{
+        margin:auto;
+        display: block;
+        transition: 0.25s ease-in-out;
+        position: relative;
+        top: 50%;
+        transform: translateY(-50%);
+        scale: 1;
+    }
+
+    #imgViewer>img:hover{
+        scale: 1.05;
+    }
+
+    #imgViewer>button{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        background-color: #00000000;
+        border: none;
+        transition: 0.2s;
+        cursor: pointer;
+    }
+
+    #imgViewer>p{
+        color: #dbdbdb59;
+        position: absolute;
+        bottom: 0;
+        left: 45.5%;
+        user-select: none;
+        z-index: -2;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
 </style>

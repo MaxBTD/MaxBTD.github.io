@@ -18,7 +18,8 @@
     onmouseenter={() => btnPopUp(25)} 
     onmouseleave={() => btnPopUp(0)} 
     style="transform:translateY(-{btnTween.current}px);
-        filter: drop-shadow(10px 10px 5px #0000004b) {darkMode ? "" : "saturate(1.75)"};">
+        filter: drop-shadow(10px 10px 5px #0000004b) {darkMode ? "" : "saturate(1.75)"};"
+        data-sveltekit-preload-data="hover">
     {tab}
 </a>
 
