@@ -49,9 +49,9 @@
         transform: rotate({tweenSpeen.current}deg)
     "/>
 
-    <video autoplay muted loop id="bgForeground" style="
+    <video autoplay muted loop class="bgForeground" style="
         filter: hue-rotate({tweenSpeen.current/3}deg) brightness({100-(tweenSpeen.current/540)*50}%); ">
-        <source src="bg.webm" type="video/mp4">
+        <source class="bgForeground" src="bg.webm" type="video/mp4">
     </video>
 
     <!-- <img src="bg.webm"
@@ -65,7 +65,10 @@
         filter: hue-rotate({tweenSpeen.current/3}deg) brightness({100-(tweenSpeen.current/540)*50}%);
     ">
 <div id="footer">
-
+    <div>Website made by: An absolute amateur.<br/>
+        <a href="https://github.com/MaxBTD/MaxBTD.github.io/tree/main" target="_blank">Source Code (pretend it's not a total mess)</a><br/>
+        © 2025 MaxBitesTheDust. All rights reserved.
+         </div>
 </div></rect>
 
     {#if tweenSpeen.current === 0 || tweenSpeen.current === 540 ? true : false}
@@ -128,6 +131,8 @@
     :global(html) {
     scroll-behavior: smooth;
     background-color: #75ddec;
+    max-width: 100%;
+    overflow-x: hidden;
     }
 
     .darkMode {
@@ -144,7 +149,7 @@
         z-index: 1;
     }
 
-    #bgForeground {
+    .bgForeground {
         position: absolute;
         z-index: -1;
         top: 0;
@@ -152,6 +157,7 @@
         width: 100%;
         height: 1250px;
         overflow: hidden;
+        scale: 1.02;
     }
 
     #bgBackground {
@@ -175,9 +181,6 @@
         
         border: 10px solid #352721;
         border-radius: 1%;
-
-        
-
     }
 
     #darkModeToggle {
@@ -216,6 +219,25 @@
     #00000000);
     }
 
+    #footer>div{
+        background-color: #000000;
+        height: 75px;
+        width: 100%;
+        position: absolute;
+        bottom: -75px;
+        color: #5c5c5c;
+        text-align: center;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        user-select: none;
+    }
+
+    #footer>div>a{
+        color: #5c5c5c;
+    }
+
+    #footer>div>a:hover{
+        font-weight: bold;
+    }
 
     :global(::-webkit-scrollbar) {
         width: 15px;
@@ -233,6 +255,5 @@
     :global(::-webkit-scrollbar-thumb:hover) {
     background: #ffffff;
     }
-
     
 </style>
