@@ -1,5 +1,8 @@
 <script>
     import ArtFrame from "./artFrame.svelte";
+
+    const artWork = [{art:"/splitDaFoe.webp", widthPerc:65}
+    ];
 </script>
 
 
@@ -7,7 +10,10 @@
                 <h1>ART</h1>
             </div>
 <div class="mainArtContent">
-    <ArtFrame />
+    {#each artWork as artWork}
+        <ArtFrame art={artWork.art} widthPerc={artWork.widthPerc}/>
+    {/each}
+    
 
     <h3>[ More coming soon... ]</h3>
 </div>

@@ -1,6 +1,8 @@
 <script>
     import { onMount } from "svelte";
+    let {art, widthPerc} = $props();
     let mounted = $state(false);
+    let heightFrame = $state(0);
 
     onMount(() => {
         mounted = true;
@@ -16,9 +18,10 @@
     }
 </script>
 
-<button class="artPicture" onclick="{() => {artOpen("/splitDaFoe.webp")}}">
-    <img src="/frame.webp" alt="frame" class="artFrame"/>
-    <img src="/splitDaFoe.webp" alt="art" class="artPiece"/>
+<!-- Set up art aligment later -->
+<button class="artPicture" onclick="{() => {artOpen(art)}}" style="width: {widthPerc}%;">
+    <img src="/frame.webp" alt="frame" class="artFrame" style="height: {heightFrame}px; margin-bottom: -{heightFrame}px; width: 105%"/>
+    <img src={art} alt="{art}" class="artPiece" bind:offsetHeight={heightFrame} style="width: 100%;"/>
 </button>
 
 <style>
@@ -35,14 +38,6 @@
     }
 
     .artFrame{
-        position: absolute;
-        margin-left: -60px;
-
-        height: 210px;
-        width: 75%;
-    }
-
-    .artPiece{
-        width: 65%;
+        position: relative;
     }
 </style>
