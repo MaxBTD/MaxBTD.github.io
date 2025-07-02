@@ -37,7 +37,7 @@ You're not supposed to see this part. please leave
                 This is <b>TOTALLY NOT</b> an excuse, that I can use in defence of my spaghetti code<br/>
                 and/or unhealthy amounts of laziness I possess.<br/><br/>
                 If you have any feedback, <br/> Don't be afraid to message me on any of my <a href="/Socials">SOCIALS!</a><br/>
-                <sub>[mainly twitter, as I use it the most]</sub>
+                <sub>[mainly twitter or spacehey, as I use them the most]</sub>
             </p>
         </div>
         <div id="disclaimerImgDiv" style="width: 29%; float:right;">

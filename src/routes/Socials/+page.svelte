@@ -2,8 +2,9 @@
     import { inview } from "svelte-inview";
     import SocialBoard from "./socialBoard.svelte";
     
-    const socials = [{platform:"Youtube", index:5, alt:"YT", link:"https://www.youtube.com/@MaxBitesTheDust"},
-                     {platform:"Twitter", index:4, alt:"TWT", link:"https://x.com/MaxBitesTheDust"},
+    const socials = [{platform:"Youtube", index:6, alt:"YT", link:"https://www.youtube.com/@MaxBitesTheDust"},
+                     {platform:"Twitter", index:5, alt:"TWT", link:"https://x.com/MaxBitesTheDust"},
+                     {platform:"SpaceHey", index:4, alt:"SH", link:"https://spacehey.com/maxbtd"},
                      {platform:"Twitch", index:3, alt:"TWCH", link:"https://www.twitch.tv/maxbitesthedust"},
                      {platform:"Bluesky", index:2, alt:"BS", link:"https://bsky.app/profile/maxbitesthedust.bsky.social"},
                      {platform:"Planet Minecraft", index:1, alt:"PM", link:"https://www.planetminecraft.com/member/maxbtd/"},
