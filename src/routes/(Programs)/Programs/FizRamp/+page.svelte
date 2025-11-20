@@ -4,7 +4,7 @@
 
 </script>
 <div id="mainDiv">
-    <h1>Hello World</h1>
+    <input type="number" id="fizRamp"/>
 </div>
 
 <style>
