@@ -10,6 +10,7 @@
     let pageHeight = $state(1000);
     let mounted = $state(false);
 
+    // menu tabs
     const tabs = ["About", "Socials", "Projects", "Art"];
     let darkMode = $state(false);
     let canToggle = $state(true);
