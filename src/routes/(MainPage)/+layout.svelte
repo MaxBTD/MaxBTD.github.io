@@ -46,7 +46,7 @@
 </script>
 
 <div id="imgViewer">
-    <button onclick="{viewerExit}"></button>
+    <button onclick="{viewerExit}" aria-labelledby="."></button>
     <img src="grafic.webp" alt="currentpicture" id="imgViewerImg"/>
     <p>[ Click off image to close ]</p>
 </div>
