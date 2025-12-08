@@ -1,7 +1,8 @@
 <script>
     import ArtFrame from "./artFrame.svelte";
 
-    const artWork = [{art:"/splitDaFoe.webp", widthPerc:65}
+    const artWork = [{art:"/splitDaFoe.webp", widthPerc:65},
+                     {art:"/SECTORFnoText.webp", widthPerc:40}
     ];
 </script>
 

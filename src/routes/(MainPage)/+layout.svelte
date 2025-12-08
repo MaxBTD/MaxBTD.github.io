@@ -6,12 +6,20 @@
     import NavBtn from './NavBtn.svelte';
     import { page } from "$app/state";
     import { onMount } from 'svelte';
+    import { get } from "svelte/store";
 	let { children } = $props();
     let pageHeight = $state(1000);
+    let pageWidth = $state(1000);
+    let viewImageWidth = $state(0);
+    let viewImageHeight = $state(0);
+    let topMarg = $state(0);
     let mounted = $state(false);
 
     // menu tabs
-    const tabs = ["About", "Socials", "Projects", "Art"];
+    const tabs = [{name: "About", symbol: ""},
+                 {name: "Socials", symbol: ""},
+                 {name: "Projects", symbol: ""},
+                 {name: "Art", symbol: ""}];
     let darkMode = $state(false);
     let canToggle = $state(true);
 
@@ -29,12 +37,29 @@
     onMount(() => {
         mounted=true;
         const pageContent = document.getElementById("pageContent");
+        const viewImage = document.getElementById("imgViewerImg"); 
 
-        const observer = new ResizeObserver((entries) => {
-        pageHeight = entries[0].contentRect.height;
+        const pageObserver = new ResizeObserver((entries) => {
+            pageHeight = entries[0].contentRect.height;
+            pageWidth = entries[0].contentRect.width;
         });
+        pageObserver.observe(pageContent);
 
-        observer.observe(pageContent);
+        const observer = new MutationObserver((changes) => {
+            changes.forEach(change => {
+                    if(change.attributeName.includes('src')){
+                        viewImageHeight = viewImage.naturalHeight;
+                        viewImageWidth = viewImage.naturalWidth;
+                    }
+                });
+        });
+        observer.observe(viewImage, {attributes : true});
+
+        // !! NavBtn.svelte content
+        let navBtns = document.getElementsByClassName("navBtn");
+        for(const element of navBtns){
+            break;
+        }
     });
     
     function viewerExit(){
@@ -44,11 +69,14 @@
             document.getElementById("imgViewer").style.visibility = "hidden";
         }
     }
+
+
+    
 </script>
 
 <div id="imgViewer">
     <button onclick="{viewerExit}" aria-labelledby="."></button>
-    <img src="grafic.webp" alt="currentpicture" id="imgViewerImg"/>
+    <img src="grafic.webp" alt="currentpicture" id="imgViewerImg" style="{viewImageWidth < viewImageHeight ? "height:95%;" : "width:95%;"}"/>
     <p>[ Click off image to close ]</p>
 </div>
 
@@ -63,10 +91,12 @@
         transform: rotate({tweenSpeen.current}deg)
     "/>
 
-    <video autoplay muted loop class="bgForeground" style="
-        filter: hue-rotate({tweenSpeen.current/3}deg) brightness({100-(tweenSpeen.current/540)*50}%); ">
-        <source class="bgForeground" src="bg.webm" type="video/mp4">
-    </video>
+    <div style=" pointer-events:none;">
+        <video autoplay muted loop class="bgForeground" id="dbd" style=" object-fit:fill;
+            filter: hue-rotate({tweenSpeen.current/3}deg) brightness({100-(tweenSpeen.current/540)*50}%); width:100%;">
+            <source class="bgForeground" src="bg.webm" type="video/mp4">
+        </video>
+    </div>
 
     <rect style="
         height: {pageHeight>1000 ? pageHeight+75 : 1000}px;
@@ -82,7 +112,7 @@
     {#if tweenSpeen.current === 0 || tweenSpeen.current === 540 ? true : false}
     <button id="darkModeToggle"
     onclick={darkModeFlip}
-    style="filter: {darkMode ? "saturate(0%) contrast(75%) drop-shadow(0 0 5px #ffffff)" : "none"}" 
+    style="z-index:-2; filter: {darkMode ? "saturate(0%) contrast(75%) drop-shadow(0 0 5px #ffffff)" : "none"}" 
     in:fade={{ duration: 2000, delay: 1000}}
     aria-label="toggle dark mode">
 
@@ -170,7 +200,7 @@
 
     #bgBackground {
         position: absolute;
-        z-index: -1;
+        z-index: -3;
         top: -740px;
         left: 0;
         width: 1905px;
@@ -212,6 +242,16 @@
 
         #darkModeToggle{
             left: 157px;
+        }
+    }
+
+    @media (max-width: 1400px) {
+        #bgBackground{
+            left: -50px;
+        }
+
+        #darkModeToggle{
+            left: 357px;
         }
     }
 

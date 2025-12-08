@@ -16,6 +16,9 @@
             document.getElementById("imgViewerImg").style.opacity = "1";
         }
     }
+
+    // random frames
+
 </script>
 
 <!-- Set up art aligment later -->
