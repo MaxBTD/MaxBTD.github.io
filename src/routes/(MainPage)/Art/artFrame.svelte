@@ -25,7 +25,7 @@
 <div class="artSize">
     <button class="artPicture" onclick="{() => {artOpen(art)}}" style="width: {widthPerc}%;">
         <img src="/frame.webp" alt="frame" class="artFrame" style="height: {heightFrame}px; margin-bottom: -{heightFrame}px; width: 105%"/>
-        <img src={art} alt="{art}" class="artPiece" bind:offsetHeight={heightFrame} style="width: 100%;"/>
+        <img src={art} alt="{art}" class="artPiece" bind:offsetHeight={heightFrame} style="width:100%"/>
     </button>
 </div>
 
@@ -50,6 +50,5 @@
     .artPiece{
         max-height: 600px;
         height:100%;
-        width: auto;
     }
 </style>
