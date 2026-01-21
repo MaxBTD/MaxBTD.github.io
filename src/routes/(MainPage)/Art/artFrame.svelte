@@ -50,5 +50,6 @@
     .artPiece{
         max-height: 600px;
         height:100%;
+        /* to be fixed */
     }
 </style>
