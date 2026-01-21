@@ -22,10 +22,12 @@
 </script>
 
 <!-- Set up art aligment later -->
-<button class="artPicture" onclick="{() => {artOpen(art)}}" style="width: {widthPerc}%;">
-    <img src="/frame.webp" alt="frame" class="artFrame" style="height: {heightFrame}px; margin-bottom: -{heightFrame}px; width: 105%"/>
-    <img src={art} alt="{art}" class="artPiece" bind:offsetHeight={heightFrame} style="width: 100%;"/>
-</button>
+<div class="artSize">
+    <button class="artPicture" onclick="{() => {artOpen(art)}}" style="width: {widthPerc}%;">
+        <img src="/frame.webp" alt="frame" class="artFrame" style="height: {heightFrame}px; margin-bottom: -{heightFrame}px; width: 105%"/>
+        <img src={art} alt="{art}" class="artPiece" bind:offsetHeight={heightFrame} style="width: 100%;"/>
+    </button>
+</div>
 
 <style>
     .artPicture{
@@ -34,6 +36,7 @@
         cursor: pointer;
         transition: 0.2s;
         filter: saturate(0.6) drop-shadow(5px 5px 10px #000000);
+        
     }
 
     .artPicture:hover{
@@ -42,5 +45,11 @@
 
     .artFrame{
         position: relative;
+    }
+
+    .artPiece{
+        max-height: 600px;
+        height:100%;
+        width: auto;
     }
 </style>

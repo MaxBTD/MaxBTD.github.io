@@ -7,6 +7,8 @@
     import { page } from "$app/state";
     import { onMount } from 'svelte';
     import { get } from "svelte/store";
+    import { darkOn } from './store.js';
+    import { setContext } from "svelte";
 	let { children } = $props();
     let pageHeight = $state(1000);
     let pageWidth = $state(1000);
@@ -20,22 +22,30 @@
                  {name: "Socials", symbol: ""},
                  {name: "Projects", symbol: ""},
                  {name: "Art", symbol: ""}];
-    let darkMode = $state(false);
+    //let darkMode = $state(false);
     let canToggle = $state(true);
 
-    let tweenSpeen = new Tween(0, {
+    let tweenSpeen = new Tween($darkOn & 1 ? 540 : 0, {
         duration: 2000,
         easing: bounceOut
-
     });
 
     function darkModeFlip(){
-        darkMode = !darkMode;
-        tweenSpeen.target = tweenSpeen.current === 0 ? 540 : 0;
+        console.log("Before - " + $darkOn);
+        tweenSpeen.target = $darkOn & 1 ? 0 : 540;
+        darkOn.set(~$darkOn);
+        console.log("After - " + $darkOn);
     }
+
+    /*
+    function toggleDark(bool toOn){
+        document.getElementById("bgBackground").classList.toggle("")
+    }*/
     
     onMount(() => {
         mounted=true;
+
+        console.log("Dark mode while loading page is: "+($darkOn & 1 ? "enabled!" : "disabled..."));
         const pageContent = document.getElementById("pageContent");
         const viewImage = document.getElementById("imgViewerImg"); 
 
@@ -70,7 +80,7 @@
         }
     }
 
-
+    
     
 </script>
 
@@ -86,7 +96,7 @@
     <img src="skyBgBig.webp"
     alt="sky"
     id="bgBackground"
-    class={darkMode ? "darkMode" : ""}
+    class={$darkOn & 1 ? "darkMode" : ""}
     style="
         transform: rotate({tweenSpeen.current}deg)
     "/>
@@ -109,10 +119,10 @@
          </div>
 </div></rect>
 
-    {#if tweenSpeen.current === 0 || tweenSpeen.current === 540 ? true : false}
+    {#if tweenSpeen.current === 0 || tweenSpeen.current === 540}
     <button id="darkModeToggle"
     onclick={darkModeFlip}
-    style="z-index:-2; filter: {darkMode ? "saturate(0%) contrast(75%) drop-shadow(0 0 5px #ffffff)" : "none"}" 
+    style="z-index:-2; filter: {$darkOn & 1 ? "saturate(0%) contrast(75%) drop-shadow(0 0 5px #ffffff)" : "none"}" 
     in:fade={{ duration: 2000, delay: 1000}}
     aria-label="toggle dark mode">
 
@@ -121,10 +131,10 @@
     <div id="mainContent">
         <nav id="pageNav">
             {#each tabs as tab}
-                <NavBtn {tab} {darkMode}/>
+                <NavBtn {tab}/>
             {/each}
         </nav>
-        <div id="pageContent" style="filter: drop-shadow(0 0 15px #00000069) {darkMode ? "" : "saturate(1.75)"}">
+        <div id="pageContent" style="filter: drop-shadow(0 0 15px #00000069) {$darkOn & 1 ? "" : "saturate(1.75)"}">
             {@render children()}
         </div>
     </div>
