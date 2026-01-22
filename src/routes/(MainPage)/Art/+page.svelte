@@ -2,7 +2,8 @@
     import ArtFrame from "./artFrame.svelte";
 
     const artWork = [{art:"/splitDaFoe.webp", widthPerc:65},
-                     {art:"/SECTORFnoText.webp", widthPerc:40}
+                     {art:"/SECTORFnoText.webp", widthPerc:18},
+                     {art:"/artfightSubmission.webp", widthPerc:25}
     ];
 </script>
 
@@ -12,7 +13,10 @@
             </div>
 <div class="mainArtContent">
     {#each artWork as artWork}
-        <ArtFrame art={artWork.art} widthPerc={artWork.widthPerc}/>
+        <ArtFrame art={artWork.art} widthPerc={artWork.widthPerc}/> 
+        {#if artWork.widthPerc>60}
+            <br/>
+        {/if}
     {/each}
     
 
