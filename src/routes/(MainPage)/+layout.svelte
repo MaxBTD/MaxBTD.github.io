@@ -337,7 +337,7 @@
     }
 
     #imgViewer>img:hover{
-        scale: 1.05;
+        scale: 1.005;
     }
 
     #imgViewer>button{
