@@ -1,0 +1,288 @@
+[33mcommit 3dc7a6d0a95ddaf035c4741360b8f1b93a6a2bdc[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m)[m
+Merge: 876e8e9 43806c8
+Author: MaxBTD <97893081+MaxBTD@users.noreply.github.com>
+Date:   Sun Feb 1 19:40:01 2026 +0100
+
+    Merge branch 'master'
+
+[33mcommit 43806c802c7136429d0cd65f054c53c4a2aa9453[m[33m ([m[1;32mmaster[m[33m)[m
+Author: MaxBTD <97893081+MaxBTD@users.noreply.github.com>
+Date:   Sun Feb 1 19:37:43 2026 +0100
+
+    added more testing
+
+[33mcommit 2857ec42bdfb46f041436fd373aded56722bcda2[m[33m ([m[1;31mmain/master[m[33m)[m
+Author: MaxBTD <97893081+MaxBTD@users.noreply.github.com>
+Date:   Thu Jan 29 11:09:39 2026 +0100
+
+    testing
+
+[33mcommit ff5ea7346e6567bd019fb5c0d73a19ae0623572b[m
+Author: MaxBTD <97893081+MaxBTD@users.noreply.github.com>
+Date:   Thu Jan 29 00:49:04 2026 +0100
+
+    Testing Grounds
+
+[33mcommit 876e8e9224143e7935a4f7bb3c5f29326d9ae5ed[m[33m ([m[1;31mmain/main[m[33m)[m
+Merge: 94b18fe 8a53b94
+Author: MaxBTD <97893081+MaxBTD@users.noreply.github.com>
+Date:   Thu Jan 22 01:47:23 2026 +0100
+
+    Merge pull request #1 from MaxBTD/master
+    
+    more art added
+
+[33mcommit 8a53b9479cff4cef9dc230a8ba9df09a228cf5c1[m
+Author: MaxBTD <97893081+MaxBTD@users.noreply.github.com>
+Date:   Thu Jan 22 01:45:21 2026 +0100
+
+    more art added
+
+[33mcommit 94b18fe57643387c846c26049200203620361367[m
+Author: MaxBTD <konradek982@gmail.com>
+Date:   Wed Jan 21 14:14:15 2026 +0100
+
+    added artpiece
+
+[33mcommit ef2d86e8a682017c4eb0e6fed77ddd25475b742a[m
+Author: MaxBTD <konradek982@gmail.com>
+Date:   Wed Jan 21 14:11:57 2026 +0100
+
+    added art
+
+[33mcommit 7244735f4c5b66db90f9cde8233a3ae2d84903e8[m
+Author: MaxBTD <konradek982@gmail.com>
+Date:   Wed Jan 21 14:09:23 2026 +0100
+
+    local storage added - theme memory
+
+[33mcommit 96d35681bb84980f848ea98b4501138390712fc5[m
+Author: MaxBTD <konradek982@gmail.com>
+Date:   Mon Dec 8 14:57:41 2025 +0100
+
+    Art added
+
+[33mcommit 185ac08a8c4b8923b27020e206d578dc38d43f37[m
+Author: MaxBTD <konradek982@gmail.com>
+Date:   Mon Nov 24 16:32:58 2025 +0100
+
+    secret subPage
+
+[33mcommit fe5809d346a04f24b0127515e6b6a8b72b479c96[m
+Author: MaxBTD <konradek982@gmail.com>
+Date:   Mon Nov 24 16:29:22 2025 +0100
+
+    secret subPage
+
+[33mcommit 0b7184b18259618393a56e135d5837d6f06788d7[m
+Author: MaxBTD <konradek982@gmail.com>
+Date:   Thu Nov 20 15:21:21 2025 +0100
+
+    .
+
+[33mcommit ce16ca6fbd4cee2f3adad6475df7fdef47fb4329[m
+Author: MaxBTD <konradek982@gmail.com>
+Date:   Thu Nov 20 15:19:10 2025 +0100
+
+    programs secret subpage
+
+[33mcommit 658e99190a7c9d0f44513313176a0b20342ecb94[m
+Author: MaxBTD <konradek982@gmail.com>
+Date:   Thu Nov 20 11:37:36 2025 +0100
+
+    hidden subpage fix
+
+[33mcommit 6b8eef94d2f95da126f71991d0bea1a097b50a0b[m
+Author: MaxBTD <konradek982@gmail.com>
+Date:   Thu Nov 20 11:32:43 2025 +0100
+
+    hidden subpage
+
+[33mcommit 122f003a03be5128d9d69bd3f3fb7b0f679dc81c[m
+Author: MaxBTD <97893081+MaxBTD@users.noreply.github.com>
+Date:   Thu Jul 3 01:04:12 2025 +0200
+
+    Added SpaceHey to Socials
+
+[33mcommit a16d803da984a00a560b7e04a5cebe0d00e3a87b[m
+Author: MaxBTD <97893081+MaxBTD@users.noreply.github.com>
+Date:   Tue Jul 1 14:38:09 2025 +0200
+
+    ArtFrame as component
+
+[33mcommit 9286da6790cba53e9319651a245cb3ba7aed141d[m
+Author: MaxBTD <97893081+MaxBTD@users.noreply.github.com>
+Date:   Thu Jun 26 22:20:12 2025 +0200
+
+    Art tab
+
+[33mcommit 6c10aaa30a4672b2fb9a6a390d5044c179048760[m
+Author: MaxBTD <97893081+MaxBTD@users.noreply.github.com>
+Date:   Thu Jun 26 16:46:04 2025 +0200
+
+    Icon update, footer added, video ACTUALLY optimized
+
+[33mcommit 95492a621cfdf83ff1d874b663abc3a90101c388[m
+Author: MaxBTD <97893081+MaxBTD@users.noreply.github.com>
+Date:   Wed Jun 25 13:42:14 2025 +0200
+
+    Video Optimization
+
+[33mcommit ed1dd184d18a5ead348f798542b0e05e4c3a9c2f[m
+Author: MaxBTD <97893081+MaxBTD@users.noreply.github.com>
+Date:   Tue Jun 24 22:35:43 2025 +0200
+
+    Image optimization
+
+[33mcommit 04327f9aaedff6b94e589c34eb22172cac4bceec[m
+Author: MaxBTD <97893081+MaxBTD@users.noreply.github.com>
+Date:   Tue Jun 24 22:33:49 2025 +0200
+
+    Optimization
+
+[33mcommit 4c06b6a6061de81c9f3f96673abdb7a311307ffc[m
+Author: MaxBTD <97893081+MaxBTD@users.noreply.github.com>
+Date:   Wed Jun 11 23:41:53 2025 +0200
+
+    v0.1 Page
+
+[33mcommit 1651856eb879c691ef1f7aa1c0e6858af56ac976[m
+Author: MaxBTD <97893081+MaxBTD@users.noreply.github.com>
+Date:   Wed Jun 11 23:39:03 2025 +0200
+
+    v0.1
+
+[33mcommit d8ce97a44c4bcb3aeb27f26ac1563f7fb8bfdf4a[m
+Author: MaxBTD <97893081+MaxBTD@users.noreply.github.com>
+Date:   Wed Jun 11 23:37:36 2025 +0200
+
+    pls wor
+
+[33mcommit 69b1ee8e8b53338c70885fd13850631e91e14a86[m
+Author: MaxBTD <97893081+MaxBTD@users.noreply.github.com>
+Date:   Wed Jun 11 23:35:06 2025 +0200
+
+    pls workz
+
+[33mcommit 8c405dbb91d9fa1fc61f56ab6ccddd1e44624aa8[m
+Author: MaxBTD <97893081+MaxBTD@users.noreply.github.com>
+Date:   Wed Jun 11 23:32:05 2025 +0200
+
+    pls work
+
+[33mcommit 4e81f2e5451fa988c5297e2adb6589a0ddeef746[m
+Author: MaxBTD <97893081+MaxBTD@users.noreply.github.com>
+Date:   Wed Jun 11 23:29:57 2025 +0200
+
+    Revert "gitPages comit"
+    
+    This reverts commit 467e6a2e6c39dae5a87beb334cb4eb8f8f02c941.
+    
+    C
+
+[33mcommit df7febab2d43e2cea16c57bc358046602b939e01[m
+Author: MaxBTD <97893081+MaxBTD@users.noreply.github.com>
+Date:   Wed Jun 11 23:29:49 2025 +0200
+
+    Revert ".."
+    
+    This reverts commit aaea451b8339c137c9afb20c30905adedc39a4d9.
+    
+    F
+
+[33mcommit 4b5458b064c5c67d2811df0c6019dc7902063616[m
+Author: MaxBTD <97893081+MaxBTD@users.noreply.github.com>
+Date:   Wed Jun 11 23:29:38 2025 +0200
+
+    Revert "deploy test1"
+    
+    This reverts commit 9890c631d262a4b4c5e0661e08072243deb76475.
+    
+    E
+
+[33mcommit 8b453e29d823c00f0b1555322bca7b0d1b220d2f[m
+Author: MaxBTD <97893081+MaxBTD@users.noreply.github.com>
+Date:   Wed Jun 11 23:29:29 2025 +0200
+
+    Revert "test 2"
+    
+    This reverts commit 80dda874365a219201fe8c7616c696f8e428ccba.
+    
+    D
+
+[33mcommit aaba720da5cd99f052f7ec8e92058e359cf3d0df[m
+Author: MaxBTD <97893081+MaxBTD@users.noreply.github.com>
+Date:   Wed Jun 11 23:29:19 2025 +0200
+
+    Revert "deploy test 3"
+    
+    This reverts commit 2f133593399c75d1590c42eaba9f43dc69699517.
+    
+    C
+
+[33mcommit cff9bb6c145b00dd0ac50c3fe8865975d14d88dd[m
+Author: MaxBTD <97893081+MaxBTD@users.noreply.github.com>
+Date:   Wed Jun 11 23:29:12 2025 +0200
+
+    Revert "deploy test 4"
+    
+    This reverts commit d1f18ba18f135bc17376bc6c032248d852cbaf23.
+    
+    B
+
+[33mcommit aab1fa1371931d9befc7ade3dd8a4dae6aa72a35[m
+Author: MaxBTD <97893081+MaxBTD@users.noreply.github.com>
+Date:   Wed Jun 11 23:28:57 2025 +0200
+
+    Revert "deploy test 5"
+    
+    This reverts commit 75d6d5c7e44f5aab287762ee950771732eb5c25b.
+    
+    A
+
+[33mcommit b843ac86bad53ad732f8d65f8c6f1f2ffcf0b4de[m
+Author: MaxBTD <97893081+MaxBTD@users.noreply.github.com>
+Date:   Wed Jun 11 23:28:36 2025 +0200
+
+    Revert "deploy test 6"
+    
+    This reverts commit 4493bd3657cd2cede1bcb0d3cbf1efaa245565b3.
+
+[33mcommit 4493bd3657cd2cede1bcb0d3cbf1efaa245565b3[m
+Author: MaxBTD <97893081+MaxBTD@users.noreply.github.com>
+Date:   Wed Jun 11 23:19:13 2025 +0200
+
+    deploy test 6
+
+[33mcommit 75d6d5c7e44f5aab287762ee950771732eb5c25b[m
+Author: MaxBTD <97893081+MaxBTD@users.noreply.github.com>
+Date:   Wed Jun 11 23:17:34 2025 +0200
+
+    deploy test 5
+
+[33mcommit d1f18ba18f135bc17376bc6c032248d852cbaf23[m
+Author: MaxBTD <97893081+MaxBTD@users.noreply.github.com>
+Date:   Wed Jun 11 23:16:01 2025 +0200
+
+    deploy test 4
+
+[33mcommit 2f133593399c75d1590c42eaba9f43dc69699517[m
+Author: MaxBTD <97893081+MaxBTD@users.noreply.github.com>
+Date:   Wed Jun 11 23:13:42 2025 +0200
+
+    deploy test 3
+
+[33mcommit 80dda874365a219201fe8c7616c696f8e428ccba[m
+Author: MaxBTD <97893081+MaxBTD@users.noreply.github.com>
+Date:   Wed Jun 11 23:11:55 2025 +0200
+
+    test 2
+
+[33mcommit 9890c631d262a4b4c5e0661e08072243deb76475[m
+Author: MaxBTD <97893081+MaxBTD@users.noreply.github.com>
+Date:   Wed Jun 11 23:01:40 2025 +0200
+
+    deploy test1
+
+[33mcommit aaea451b8339c137c9afb20c30905adedc39a4d9[m
+Author: MaxBTD <97893081+MaxBTD@users.noreply.gith
