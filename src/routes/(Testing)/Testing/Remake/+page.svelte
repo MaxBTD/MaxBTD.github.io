@@ -9,6 +9,7 @@
     $: innerHeight = 0;
     $: ofsetX = innerWidth/2-$coords.x;
     $: musicPaused = false;
+    $: volumeMusic = 0;
 
     function audioSwitch(){
         var music = document.getElementById("ambientMusic");
@@ -19,11 +20,12 @@
     <svelte:window bind:innerWidth bind:innerHeight/>
 
 <div id="mainDiv" >
-    <audio preload="auto" autoplay="true" loop="true" hidden="true" volume={0.2} id="ambientMusic" bind:paused={musicPaused}>
+    <audio preload="auto" autoplay="true" loop="true" hidden="true" volume={volumeMusic/100} id="ambientMusic" bind:paused={musicPaused}>
         <source src="/chillSong.wav" type="audio/mpeg"> </audio>
 
     <button id="freakyBtn">{innerWidth/2}</button>
     <button onclick={()=>{audioSwitch()}}><img id="offOnSwitch" src={musicPaused ? "/off.png" : "/on.png"} alt="ON" style="width:5em;"/></button>
+    <input type="range" id="volume" name="volume" min="0" max="100" step="1" bind:value={volumeMusic}/>
     <h1>{ofsetX}</h1>
     <h1>{$coords.y}</h1>
     <div >
@@ -37,50 +39,88 @@
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" style="position: absolute;transform: translateX({ofsetX/1000}em) translateY({$coords.y/1500-5}em);">
             <path fill="#0099ff" fill-opacity="1" d="M0,128L60,128C120,128,240,128,360,133.3C480,139,600,149,720,149.3C840,149,960,139,1080,133.3C1200,128,1320,128,1380,128L1440,128L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"></path>
         </svg>-->
-        <svg preserveAspectRatio="none" filter="url(#pixelate)" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" style="position: absolute;top:18em;transform: translateX({ofsetX/700}em) translateY({$coords.y/1400}em) translateZ(0);">
-            <path fill="#1599ad" fill-opacity="1" d="M0,128L48,122.7C96,117,192,107,288,96C384,85,480,75,576,85.3C672,96,768,128,864,138.7C960,149,1056,139,1152,149.3C1248,160,1344,192,1392,208L1440,224L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+        <svg id="wave1" preserveAspectRatio="none" filter="url(#pixelate) drop-shadow(1em -2em 1em #0000001f)" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" style="position: absolute;top:{($coords.y/1400)+24.5}em;transform: translateX({ofsetX/700}em) translateZ(0);">
+            <path fill="#1599ad" fill-opacity="1" 
+                d="M 0 128 C 0 128 524.334 151.915 674.949 133.069 C 794.32 118.133 1440 148.379 1440 148.379 L 1440 320 C 1440 320 96 320 48 320 L 0 320 L 0 128 Z">
+            </path>
         </svg>
-        <svg preserveAspectRatio="none" filter="url(#pixelate)" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" style="position: absolute;top:15em;transform: translateX({ofsetX/300}em) translateY({$coords.y/1300}em);">
-            <path fill="#24a3b5" fill-opacity="1" d="M0,256L48,245.3C96,235,192,213,288,197.3C384,181,480,171,576,170.7C672,171,768,181,864,186.7C960,192,1056,192,1152,192C1248,192,1344,192,1392,192L1440,192L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+        <svg id="wave2"  preserveAspectRatio="none" filter="url(#pixelate) drop-shadow(1em -2em 1em #0000001f)" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" style="position: absolute;top:{($coords.y/1000)+28}em;transform: translateX({ofsetX/200}em) translateZ(0);">
+            <path fill="#24a3b5" fill-opacity="1" 
+                d="M 0 128 C 0 128 524.334 151.915 674.949 133.069 C 794.32 118.133 1440 148.379 1440 148.379 L 1440 320 C 1440 320 96 320 48 320 L 0 320 L 0 128 Z">
+            </path>
         </svg>
-        <svg preserveAspectRatio="none" filter="url(#pixelate)" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" style="position: absolute;top:18em;transform: translateX({ofsetX/100}em) translateY({$coords.y/12500}em);">
-            <path fill="#3cbfd2" fill-opacity="1" d="M0,96L48,122.7C96,149,192,203,288,218.7C384,235,480,213,576,208C672,203,768,213,864,224C960,235,1056,245,1152,245.3C1248,245,1344,235,1392,229.3L1440,224L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+        <svg id="wave3" preserveAspectRatio="none" filter="url(#pixelate) drop-shadow(1em -2em 1em #0000001f)" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" style="position: absolute;top:{($coords.y/500)+36}em;transform: translateX({ofsetX/50}em) translateZ(0);">
+            <path fill="#3cbfd2" fill-opacity="1" 
+                d="M 0 128 C 0 128 524.334 151.915 674.949 133.069 C 794.32 118.133 1440 148.379 1440 148.379 L 1440 320 C 1440 320 96 320 48 320 L 0 320 L 0 128 Z">
+            </path>
         </svg>
+
     </div>
 
     <svg style="position:absolute;visibility:hidden;">
         <filter id="pixelate" x="0" y="0">
             <feFlood x="4" y="4" height="1" width="1" result="flood"></feFlood>
-            <feComposite width="8" height="8" in="flood" result="composite"></feComposite>
+            <feComposite width="4" height="4" in="flood" result="composite"></feComposite>
             <feTile in="composite" result="tiled"></feTile>
             <feComposite in="SourceGraphic" in2="tiled" operator="in"></feComposite>
             <feComponentTransfer> <feFuncA type="discrete" tableValues="0 1" /> </feComponentTransfer>
-            <feMorphology operator="dilate" radius="4" result="final"></feMorphology>
+            <feMorphology operator="dilate" radius="2" result="final"></feMorphology>
             
         </filter>
     </svg>
 
     <svg>
-  <filter id="pixelate" x="0" y="0">
-    <feFlood x="4" y="4" height="2" width="2"/>
-    
-    <feComposite width="10" height="10"/>
-    
-    <feTile result="a"/>
-    
-    <feComposite in="SourceGraphic" in2="a" 
-                 operator="in"/>
-    
-    <feMorphology operator="dilate"
-                  radius="5"/>
-  </filter>
+        <filter id="pixelate" x="0" y="0">
+            <feFlood x="4" y="4" height="2" width="2"/>
+            
+            <feComposite width="10" height="10"/>
+            
+            <feTile result="a"/>
+            
+            <feComposite in="SourceGraphic" in2="a" 
+                        operator="in"/>
+            
+            <feMorphology operator="dilate"
+                        radius="5"/>
+        </filter>
+    </svg>
 </div>
 
 <style>
     @keyframes squish{
         0% {width:100%;}
-        50% {width:102%;}
+        50% {width:105%;}
         100% {width:100%;}
+    }
+
+    @keyframes wavey{
+        0%{
+            d: path("M 0 128 C 0 128 525.063 160.253 674.949 136.287 C 793.516 117.329 1440 148.379 1440 148.379 L 1440 320 C 1440 320 96 320 48 320 L 0 320 L 0 128 Z");
+        }
+        25%{
+            d: path("M 0 128 C 0 128 463.017 112.001 606.57 141.918 C 700.191 161.429 1440 148.379 1440 148.379 L 1440 320 C 1440 320 96 320 48 320 L 0 320 L 0 128 Z");
+        }
+        60%{
+            d: path("M 0 128 C 0 128 610.409 166.222 754.592 139.505 C 827.297 126.033 1440 148.379 1440 148.379 L 1440 320 C 1440 320 96 320 48 320 L 0 320 L 0 128 Z");
+        }
+        100%{
+            d: path("M 0 128 C 0 128 525.063 160.253 674.949 136.287 C 793.516 117.329 1440 148.379 1440 148.379 L 1440 320 C 1440 320 96 320 48 320 L 0 320 L 0 128 Z");
+        }
+    }
+
+    @keyframes wavey2{
+        0%{
+            d: path("M 0 128 C 0 128 531.723 186.552 674.949 136.287 C 786.276 97.217 1440 148.379 1440 148.379 L 1440 320 C 1440 320 96 320 48 320 L 0 320 L 0 128 Z");
+        }
+        25%{
+            d: path("M 0 128 C 0 128 405.317 73.611 547.843 125.829 C 660.779 167.206 1440 148.379 1440 148.379 L 1440 320 C 1440 320 96 320 48 320 L 0 320 L 0 128 Z");
+        }
+        90%{
+            d: path("M 0 128 C 0 128 734.708 233.247 865.608 156.399 C 956.823 102.849 1440 148.379 1440 148.379 L 1440 320 C 1440 320 96 320 48 320 L 0 320 L 0 128 Z");
+        }
+        100%{
+            d: path("M 0 128 C 0 128 531.723 186.552 674.949 136.287 C 786.276 97.217 1440 148.379 1440 148.379 L 1440 320 C 1440 320 96 320 48 320 L 0 320 L 0 128 Z");
+        }
     }
 
     img {
@@ -111,10 +151,26 @@
         cursor: pointer;
     }
 
-    svg {
-        transition: 0.25s ease-out;
+    svg{
         animation-name: squish;
         animation-duration: 5s;
         animation-iteration-count: infinite;
     }
+
+    #wave2 path {
+        animation-timing-function: ease-out;
+        animation-name: wavey2;
+        animation-duration: 8s;
+        animation-iteration-count: infinite;
+    }
+
+    #wave1 path{
+        animation-delay: 1s;
+        animation-name: wavey;
+        animation-duration: 10s;
+        animation-iteration-count: infinite;
+    }
+
+
+
 </style>
