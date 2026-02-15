@@ -39,19 +39,24 @@
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" style="position: absolute;transform: translateX({ofsetX/1000}em) translateY({$coords.y/1500-5}em);">
             <path fill="#0099ff" fill-opacity="1" d="M0,128L60,128C120,128,240,128,360,133.3C480,139,600,149,720,149.3C840,149,960,139,1080,133.3C1200,128,1320,128,1380,128L1440,128L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"></path>
         </svg>-->
-        <svg id="wave1" preserveAspectRatio="none" filter="url(#pixelate) drop-shadow(1em -2em 1em #0000001f)" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" style="position: absolute;top:{($coords.y/1400)+24.5}em;transform: translateX({ofsetX/700}em) translateZ(0);">
+        <svg preserveAspectRatio="none" filter="url(#pixelate) drop-shadow(1em -2em 1em #00000015)" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" style="position: absolute;top:{($coords.y/1400)+24.5}em;transform: translateX({ofsetX/700}em) translateZ(0);">
+            <path fill="#1599bd" fill-opacity="1" 
+                d="M 0 128 C 0 128 523.176 130.809 674.949 133.069 C 795.2 134.859 1440 148.379 1440 148.379 L 1440 320 L 0 320 L 0 128 Z">
+            </path>
+        </svg>
+        <svg id="wave1" preserveAspectRatio="none" filter="url(#pixelate) drop-shadow(1em -2em 1em #00000015)" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" style="position: absolute;top:{($coords.y/1400)+26}em;transform: translateX({ofsetX/700}em) translateZ(0);">
             <path fill="#1599ad" fill-opacity="1" 
-                d="M 0 128 C 0 128 524.334 151.915 674.949 133.069 C 794.32 118.133 1440 148.379 1440 148.379 L 1440 320 C 1440 320 96 320 48 320 L 0 320 L 0 128 Z">
+                d="M 0 128 C 0 128 524.334 151.915 674.949 133.069 C 794.32 118.133 1440 148.379 1440 148.379 L 1440 320 L 0 320 L 0 128 Z">
             </path>
         </svg>
-        <svg id="wave2"  preserveAspectRatio="none" filter="url(#pixelate) drop-shadow(1em -2em 1em #0000001f)" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" style="position: absolute;top:{($coords.y/1000)+28}em;transform: translateX({ofsetX/200}em) translateZ(0);">
+        <svg id="wave2"  preserveAspectRatio="none" filter="url(#pixelate) drop-shadow(1em -2em 1em #00000015)" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" style="position: absolute;top:{($coords.y/1000)+30}em;transform: translateX({ofsetX/200}em) translateZ(0);">
             <path fill="#24a3b5" fill-opacity="1" 
-                d="M 0 128 C 0 128 524.334 151.915 674.949 133.069 C 794.32 118.133 1440 148.379 1440 148.379 L 1440 320 C 1440 320 96 320 48 320 L 0 320 L 0 128 Z">
+                d="M 0 128 C 0 128 524.334 151.915 674.949 133.069 C 794.32 118.133 1440 148.379 1440 148.379 L 1440 320 L 0 320 L 0 128 Z">
             </path>
         </svg>
-        <svg id="wave3" preserveAspectRatio="none" filter="url(#pixelate) drop-shadow(1em -2em 1em #0000001f)" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" style="position: absolute;top:{($coords.y/500)+36}em;transform: translateX({ofsetX/50}em) translateZ(0);">
+        <svg id="wave3" preserveAspectRatio="none" filter="url(#pixelate) drop-shadow(1em -2em 1em #00000015)" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" style="position: absolute;top:{($coords.y/500)+36}em;transform: translateX({ofsetX/50}em) translateZ(0);">
             <path fill="#3cbfd2" fill-opacity="1" 
-                d="M 0 128 C 0 128 524.334 151.915 674.949 133.069 C 794.32 118.133 1440 148.379 1440 148.379 L 1440 320 C 1440 320 96 320 48 320 L 0 320 L 0 128 Z">
+                d="M 0 128 C 0 128 524.334 151.915 674.949 133.069 C 794.32 118.133 1440 148.379 1440 148.379 L 1440 320 L 0 320 L 0 128 Z">
             </path>
         </svg>
 
@@ -95,31 +100,31 @@
 
     @keyframes wavey{
         0%{
-            d: path("M 0 128 C 0 128 525.063 160.253 674.949 136.287 C 793.516 117.329 1440 148.379 1440 148.379 L 1440 320 C 1440 320 96 320 48 320 L 0 320 L 0 128 Z");
+            d: path("M 0 128 C 0 128 525.063 160.253 674.949 136.287 C 793.516 117.329 1440 148.379 1440 148.379 L 1440 320 L 0 320 L 0 128 Z");
         }
         25%{
-            d: path("M 0 128 C 0 128 463.017 112.001 606.57 141.918 C 700.191 161.429 1440 148.379 1440 148.379 L 1440 320 C 1440 320 96 320 48 320 L 0 320 L 0 128 Z");
+            d: path("M 0 128 C 0 128 463.017 112.001 606.57 141.918 C 700.191 161.429 1440 148.379 1440 148.379 L 1440 320 L 0 320 L 0 128 Z");
         }
         60%{
-            d: path("M 0 128 C 0 128 610.409 166.222 754.592 139.505 C 827.297 126.033 1440 148.379 1440 148.379 L 1440 320 C 1440 320 96 320 48 320 L 0 320 L 0 128 Z");
+            d: path("M 0 128 C 0 128 610.409 166.222 754.592 139.505 C 827.297 126.033 1440 148.379 1440 148.379 L 1440 320 L 0 320 L 0 128 Z");
         }
         100%{
-            d: path("M 0 128 C 0 128 525.063 160.253 674.949 136.287 C 793.516 117.329 1440 148.379 1440 148.379 L 1440 320 C 1440 320 96 320 48 320 L 0 320 L 0 128 Z");
+            d: path("M 0 128 C 0 128 525.063 160.253 674.949 136.287 C 793.516 117.329 1440 148.379 1440 148.379 L 1440 320 L 0 320 L 0 128 Z");
         }
     }
 
     @keyframes wavey2{
         0%{
-            d: path("M 0 128 C 0 128 531.723 186.552 674.949 136.287 C 786.276 97.217 1440 148.379 1440 148.379 L 1440 320 C 1440 320 96 320 48 320 L 0 320 L 0 128 Z");
+            d: path("M 0 128 C 0 128 531.723 186.552 674.949 136.287 C 786.276 97.217 1440 148.379 1440 148.379 L 1440 320 L 0 320 L 0 128 Z");
         }
         25%{
-            d: path("M 0 128 C 0 128 405.317 73.611 547.843 125.829 C 660.779 167.206 1440 148.379 1440 148.379 L 1440 320 C 1440 320 96 320 48 320 L 0 320 L 0 128 Z");
+            d: path("M 0 128 C 0 128 405.317 73.611 547.843 125.829 C 660.779 167.206 1440 148.379 1440 148.379 L 1440 3200 L 0 320 L 0 128 Z");
         }
-        90%{
-            d: path("M 0 128 C 0 128 734.708 233.247 865.608 156.399 C 956.823 102.849 1440 148.379 1440 148.379 L 1440 320 C 1440 320 96 320 48 320 L 0 320 L 0 128 Z");
+        75%{
+            d: path("M 0 128 C 0 128 734.708 233.247 865.608 156.399 C 956.823 102.849 1440 148.379 1440 148.379 L 1440 320 L 0 320 L 0 128 Z");
         }
         100%{
-            d: path("M 0 128 C 0 128 531.723 186.552 674.949 136.287 C 786.276 97.217 1440 148.379 1440 148.379 L 1440 320 C 1440 320 96 320 48 320 L 0 320 L 0 128 Z");
+            d: path("M 0 128 C 0 128 531.723 186.552 674.949 136.287 C 786.276 97.217 1440 148.379 1440 148.379 L 1440 320 L 0 320 L 0 128 Z");
         }
     }
 
@@ -153,12 +158,13 @@
 
     svg{
         animation-name: squish;
-        animation-duration: 5s;
+        animation-duration: 15s;
         animation-iteration-count: infinite;
+        animation-timing-function: cubic-bezier(0.15, 0.32, 0.55, 1.35);
     }
 
     #wave2 path {
-        animation-timing-function: ease-out;
+        animation-timing-function: cubic-bezier(0.15, 0.32, 0.55, 1.35);
         animation-name: wavey2;
         animation-duration: 8s;
         animation-iteration-count: infinite;
