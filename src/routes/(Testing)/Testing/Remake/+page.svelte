@@ -14,7 +14,7 @@
     $: musicPaused = false;
     $: volumeMusic = 0;
     $: waveHeight = 0;
-    $: topWave = -3.25;
+    $: topWave = -7.5+(1500/innerWidth);
 
     function audioSwitch(){
         var music = document.getElementById("ambientMusic");
@@ -31,12 +31,15 @@
     <button id="freakyBtn">{innerWidth/2}</button>
     <button onclick={()=>{audioSwitch()}}><img id="offOnSwitch" src={musicPaused ? "/off.png" : "/on.png"} alt="ON" style="width:5em;"/></button>
     <input type="range" id="volume" name="volume" min="0" max="100" step="1" bind:value={volumeMusic}/>
-    <h1>{waveHeight}</h1>
-    <h1>{$coords.y}</h1>
+    <h1>waveHeight: {waveHeight}</h1>
+    <h1>$coords.y: {$coords.y}</h1>
+    <h1>topWave: {topWave}</h1>
+    <!--    
     <div >
         <img src="/mainPlank.webp" alt="plank" id="target" >
     </div>
-    
+    -->
+
     <!--Header beach background-->
     <div id="waveDiv" style="height:{waveHeight}em;" >
         <img src="/front.png" alt="beach" style="width: 115%;position:absolute;z-index:2;left:-7.5%;transform: translateX({ofsetX/700}em) translateY({$coords.y/1400}em);"/>
@@ -48,19 +51,19 @@
                 </path>
             </svg>
             <svg id="wave1" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" 
-            style="top:{topWave+1}em;transform: translateX({ofsetX/700}em) translateZ(0);">
+            style="top:{topWave+2}em;transform: translateX({ofsetX/700}em) translateZ(0);">
                 <path fill="#1599ad" fill-opacity="1" 
                     d="M 0 128 C 0 128 524.334 151.915 674.949 133.069 C 794.32 118.133 1440 148.379 1440 148.379 L 1440 320 L 0 320 L 0 128 Z">
                 </path>
             </svg>
             <svg id="wave2"  preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" 
-            style="top:{topWave+3}em;transform: translateX({ofsetX/200}em) translateZ(0);">
+            style="top:{topWave+5}em;transform: translateX({ofsetX/200}em) translateZ(0);">
                 <path fill="#24a3b5" fill-opacity="1" 
                     d="M 0 128 C 0 128 524.334 151.915 674.949 133.069 C 794.32 118.133 1440 148.379 1440 148.379 L 1440 320 L 0 320 L 0 128 Z">
                 </path>
             </svg>
             <svg id="wave3" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" 
-            style="top:{topWave+5}em;transform: translateX({ofsetX/50}em) translateZ(0);">
+            style="top:{topWave+9}em;transform: translateX({ofsetX/50}em) translateZ(0);">
                 <path fill="#3cbfd2" fill-opacity="1" 
                     d="M 0 128 C 0 128 524.334 151.915 674.949 133.069 C 794.32 118.133 1440 148.379 1440 148.379 L 1440 320 L 0 320 L 0 128 Z">
                 </path>
@@ -99,11 +102,14 @@
 </div>
 
 <style>
+    :global(body){
+        background-color: #e2d074;
+    }
+
     #waveDiv{
         max-width:100%;
         width:auto;
         overflow-x:hidden;
-        background-color:#ff2929f0;
     }
     #wavesBehind{ 
         display:flex;
@@ -111,10 +117,12 @@
         width:100%;
         position:relative;
         z-index:1;
+        overflow-y: visible;
     }
     #wavesBehind>svg{
         position: absolute;
         filter: url(#pixelate) drop-shadow(1em -2em 1em #00000015);
+        min-width: 1080px;
     }
 
     @keyframes squish{
