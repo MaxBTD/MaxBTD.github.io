@@ -4,12 +4,19 @@
     import { onMount } from "svelte";
 	const coords =  mousePosition();
     
+    onMount(()=>{
+        waveHeight = (document.getElementById("wave1").getBBox().height)/5;
+        treeHeight = (document.getElementById("treeSvg").getBBox().height);
+    });
 
     $: innerWidth = 0;
     $: innerHeight = 0;
     $: ofsetX = innerWidth/2-$coords.x;
     $: musicPaused = false;
     $: volumeMusic = 0;
+    $: waveHeight = 0;
+    $: topWave = -7.5+(1500/innerWidth);
+    $: treeHeight = 0;
 
     function audioSwitch(){
         var music = document.getElementById("ambientMusic");
@@ -19,50 +26,60 @@
 
     <svelte:window bind:innerWidth bind:innerHeight/>
 
-<div id="mainDiv" >
+<div id="mainDiv">
     <audio preload="auto" autoplay="true" loop="true" hidden="true" volume={volumeMusic/100} id="ambientMusic" bind:paused={musicPaused}>
         <source src="/chillSong.wav" type="audio/mpeg"> </audio>
 
     <button id="freakyBtn">{innerWidth/2}</button>
     <button onclick={()=>{audioSwitch()}}><img id="offOnSwitch" src={musicPaused ? "/off.png" : "/on.png"} alt="ON" style="width:5em;"/></button>
     <input type="range" id="volume" name="volume" min="0" max="100" step="1" bind:value={volumeMusic}/>
-    <h1>{ofsetX}</h1>
-    <h1>{$coords.y}</h1>
+    <h1>waveHeight: {waveHeight}</h1>
+    <h1>$coords.y: {$coords.y}</h1>
+    <h1>topWave: {topWave}</h1>
+    <!--    
     <div >
         <img src="/mainPlank.webp" alt="plank" id="target" >
     </div>
-    
-    <div id="waveDiv" style="max-width:100%;width:auto;overflow-x:hidden;height:100px;" >
-        <img src="/front.png" alt="beach" style="width: 115%;position:absolute;z-index:1;left:-7.5%;transform: translateX({ofsetX/700}em) translateY({$coords.y/1400}em);"/>
-        <!--<svg preserveAspectRatio="none"
-        style="width: 100%;position:absolute;z-index:1;left:0;"  viewBox="0 0 214.303 80.823" xml:space="preserve" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="b"><stop style="stop-color:#d68b0c;stop-opacity:1" offset="0"/><stop style="stop-color:#e3d378;stop-opacity:0" offset="1"/></linearGradient><linearGradient id="a"><stop style="stop-color:#e3d378;stop-opacity:1" offset="0"/><stop style="stop-color:#e3d378;stop-opacity:0" offset="1"/></linearGradient><linearGradient xlink:href="#a" id="c" x1="102.955" y1="97.245" x2="102.955" y2="114.478" gradientUnits="userSpaceOnUse" gradientTransform="translate(-9.028 -34.623)"/><radialGradient xlink:href="#b" id="d" cx="233.949" cy="119.346" fx="233.949" fy="119.346" r="107.151" gradientTransform="rotate(89.22 194.784 144.448)scale(.32231 1.89878)" gradientUnits="userSpaceOnUse"/></defs><path style="display:inline;fill:url(#c);fill-opacity:1;stroke-width:.264583" d="M10.385 0C3.958.655 6.549.822.14 1.63L0 80.824l214.302-.716-.01-78.211L184.327.31c-5.906.23-10.504 1.224-16.404 1.315l-4.158 1.986-3.88 1.44c.03.08.798 7.86.997 9.324l-3.413 2.078-11.99 9.147-5.115.104-4.186 5.115-5.478-.206-5.322 3.1-2.274.104-4.03 1.395-17.52.413-9.973-1.085-7.842-3.906-10.67-.512-5.846-2.85-16.7-1.169-7.71-6.687-2.554-3.689.321-8.823c-1.352-1.665-1.054-.963-.03-2.685Z"/><path style="fill:url(#d);fill-opacity:1;stroke-width:.264583" d="M10.386 0C3.959.654 6.55.82.14 1.63L0 80.822l214.302-.716-.01-78.211L184.327.31c-5.905.23-10.503 1.225-16.403 1.315l-4.158 1.986-3.88 1.44c.03.08.798 7.861.997 9.324l-3.413 2.079-11.99 9.146-5.115.104-4.186 5.116-5.478-.207-5.322 3.1-2.274.104-4.031 1.395-17.518.414-9.974-1.086-7.842-3.906-10.67-.511-5.846-2.85-16.7-1.17-7.71-6.687-2.554-3.688.321-8.823c-1.352-1.666-1.055-.964-.03-2.685z"/></svg>
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" style="position: absolute;transform: translateX({ofsetX/1000}em) translateY({$coords.y/1500-5}em);">
-            <path fill="#0099ff" fill-opacity="1" d="M0,128L60,128C120,128,240,128,360,133.3C480,139,600,149,720,149.3C840,149,960,139,1080,133.3C1200,128,1320,128,1380,128L1440,128L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"></path>
-        </svg>-->
-        <svg preserveAspectRatio="none" filter="url(#pixelate) drop-shadow(1em -2em 1em #00000015)" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" style="position: absolute;top:{($coords.y/1400)+24.5}em;transform: translateX({ofsetX/700}em) translateZ(0);">
-            <path fill="#1599bd" fill-opacity="1" 
-                d="M 0 128 C 0 128 523.176 130.809 674.949 133.069 C 795.2 134.859 1440 148.379 1440 148.379 L 1440 320 L 0 320 L 0 128 Z">
-            </path>
-        </svg>
-        <svg id="wave1" preserveAspectRatio="none" filter="url(#pixelate) drop-shadow(1em -2em 1em #00000015)" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" style="position: absolute;top:{($coords.y/1400)+26}em;transform: translateX({ofsetX/700}em) translateZ(0);">
-            <path fill="#1599ad" fill-opacity="1" 
-                d="M 0 128 C 0 128 524.334 151.915 674.949 133.069 C 794.32 118.133 1440 148.379 1440 148.379 L 1440 320 L 0 320 L 0 128 Z">
-            </path>
-        </svg>
-        <svg id="wave2"  preserveAspectRatio="none" filter="url(#pixelate) drop-shadow(1em -2em 1em #00000015)" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" style="position: absolute;top:{($coords.y/1000)+30}em;transform: translateX({ofsetX/200}em) translateZ(0);">
-            <path fill="#24a3b5" fill-opacity="1" 
-                d="M 0 128 C 0 128 524.334 151.915 674.949 133.069 C 794.32 118.133 1440 148.379 1440 148.379 L 1440 320 L 0 320 L 0 128 Z">
-            </path>
-        </svg>
-        <svg id="wave3" preserveAspectRatio="none" filter="url(#pixelate) drop-shadow(1em -2em 1em #00000015)" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" style="position: absolute;top:{($coords.y/500)+36}em;transform: translateX({ofsetX/50}em) translateZ(0);">
-            <path fill="#3cbfd2" fill-opacity="1" 
-                d="M 0 128 C 0 128 524.334 151.915 674.949 133.069 C 794.32 118.133 1440 148.379 1440 148.379 L 1440 320 L 0 320 L 0 128 Z">
-            </path>
-        </svg>
+    -->
 
+    <!--Header beach background-->
+    <div id="waveDiv" style="height:{waveHeight*1.5}em;" >
+        <div id="treesFront">
+            <svg id="treeSvg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 245"
+            style="top:-200%; position:absolute;filter:url(#pixelate);">
+                <defs>
+                    <linearGradient id="grad1" x1="0%" x2="100%" y1="0%" y2="0%">
+                    <stop offset="0%" stop-color="rgb(105, 75, 63)" />
+                    <stop offset="100%" stop-color="rgb(59, 42, 35)" />
+                    </linearGradient>
+                </defs>
+                <path style="fill: url(#grad1);" d="M 27.28 200.658 C 27.28 200.658 63.647 92.134 64.215 92.703 C 64.783 93.272 134.102 0.088 134.102 0.088 L 159.67 14.861 C 159.67 14.861 104.556 104.066 103.988 104.066 C 103.42 104.066 93.192 133.612 93.192 133.612 C 93.192 133.612 144.897 220.544 144.329 220.544 C 143.761 220.544 93.761 197.817 93.761 197.817 C 93.761 197.817 73.306 244.408 73.874 244.408 C 74.442 244.408 43.19 204.635 42.62 204.635 C 42.06 204.635 0.01 217.135 0.01 217.135 L 27.28 200.658 Z"></path>
+            </svg>
+        </div>
+        <img src="/front.png" alt="beach" style="width: 105%;position:absolute;z-index:2;left:-3%;transform: translateX({ofsetX/700}em) translateY({$coords.y/1400}em);"/>
+        <div id="wavesBehind" style="height:{waveHeight}em;">
+            <svg id="wave1" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 170" 
+            style="transform: translateX({ofsetX/700}em) translateZ(0);">
+                <use href="#defaultWave" fill="#00667d" />
+            </svg>
+            <svg id="wave2"  preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" 
+            style="top:2em;transform: translateX({ofsetX/450}em) translateZ(0);">
+                <use href="#defaultWave" fill="#008fb4" />
+            </svg>
+
+            <svg id="wave3" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" 
+            style="top:7em;transform: translateX({ofsetX/200}em) translateZ(0);">
+                <use href="#defaultWave" fill="#00a8d5" />
+            </svg>
+            <svg id="wave4"  preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" 
+            style="top:12em;transform: translateX({ofsetX/100}em) translateZ(0);">
+                <use href="#defaultWave" fill="#1fc0da" />
+            </svg>
+        </div>
     </div>
 
-    <svg style="position:absolute;visibility:hidden;">
+    <!-- PIXEL FILTER - KEEP BOTH -->
+    <svg class="svgTemplate">
         <filter id="pixelate" x="0" y="0">
             <feFlood x="4" y="4" height="1" width="1" result="flood"></feFlood>
             <feComposite width="4" height="4" in="flood" result="composite"></feComposite>
@@ -73,8 +90,7 @@
             
         </filter>
     </svg>
-
-    <svg>
+    <svg class="svgTemplate">
         <filter id="pixelate" x="0" y="0">
             <feFlood x="4" y="4" height="2" width="2"/>
             
@@ -89,15 +105,68 @@
                         radius="5"/>
         </filter>
     </svg>
+    <svg class="svgTemplate">
+        <path id="defaultWave"  fill-opacity="1" 
+            d="M 0 0 C 0 0 524 22 675 4 C 794 -10 1440 20 1440 20 L 1440 170 L 0 170 L 0 0 Z">
+        </path>
+    </svg>
 </div>
 
 <style>
+    :global(body){
+        background: linear-gradient(
+            180deg,
+            #84e6ff 30%,
+            #e2d074 30% 100% 
+        );
+        background-repeat: no-repeat;
+        background-size: cover;
+        margin: 0 auto;
+        padding-bottom: 100em;
+    }
+
+    #treesFront{
+        z-index: 3;
+        width: 25%;
+        position: absolute;
+        left: -5%;
+    }
+
+    .svgTemplate{
+        position:absolute;
+        visibility:hidden;
+    }
+
+    #waveDiv{
+        margin-top: 15em;
+
+
+        max-width:100%;
+        width:auto;
+        overflow-x: hidden;
+        position: relative;
+        overflow-y: visible;
+    }
+    #wavesBehind{ 
+        display:flex;
+        flex-direction: column;
+        width:100%;
+        position:absolute;
+        z-index:1;
+        top:15px;
+    }
+    #wavesBehind>svg{
+        position: absolute;
+        filter: url(#pixelate) drop-shadow(1em -2em 1em #00000015);
+        min-width: 1080px;
+    }
+
     @keyframes squish{
         0% {width:100%;}
         50% {width:105%;}
         100% {width:100%;}
     }
-
+/*
     @keyframes wavey{
         0%{
             d: path("M 0 128 C 0 128 525.063 160.253 674.949 136.287 C 793.516 117.329 1440 148.379 1440 148.379 L 1440 320 L 0 320 L 0 128 Z");
@@ -126,7 +195,7 @@
         100%{
             d: path("M 0 128 C 0 128 531.723 186.552 674.949 136.287 C 786.276 97.217 1440 148.379 1440 148.379 L 1440 320 L 0 320 L 0 128 Z");
         }
-    }
+    }*/
 
     img {
         image-rendering: pixelated;
@@ -176,7 +245,4 @@
         animation-duration: 10s;
         animation-iteration-count: infinite;
     }
-
-
-
 </style>
