@@ -6,7 +6,7 @@
     
     onMount(()=>{
         waveHeight = (document.getElementById("wave1").getBBox().height)/5;
-        treeHeight = (document.getElementById("treeSvg").getBBox().height);
+        treeHeight = (document.getElementsByClassName("treeSvg")[0].getBBox().height);
     });
 
     $: innerWidth = 0;
@@ -45,15 +45,26 @@
     <!--Header beach background-->
     <div id="waveDiv" style="height:{waveHeight*1.5}em;" >
         <div id="treesFront" style="height:{treeHeight}em;">
-            <svg id="treeSvg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 245"
-            style="position:absolute;filter:url(#pixelate);">
+            <svg class="treeSvg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 245"
+            style="position:absolute;filter:url(#pixelate);left:-5%">
                 <defs>
                     <radialGradient id="treeGrad" x1="0%" x2="100%" y1="0%" y2="100%" fx="85%" fy="70%" cy="70%">
                         <stop offset="0%" stop-color="#3b2a23" />
                         <stop offset="100%" stop-color="#694b3f" />
                     </radialGradient>
                 </defs>
-                <path style="fill: url(#treeGrad);" d="M 27.28 200.658 C 27.28 200.658 63.647 92.134 64.215 92.703 C 64.783 93.272 134.102 0.088 134.102 0.088 L 159.67 14.861 C 159.67 14.861 104.556 104.066 103.988 104.066 C 103.42 104.066 93.192 133.612 93.192 133.612 C 93.192 133.612 144.897 220.544 144.329 220.544 C 143.761 220.544 93.761 197.817 93.761 197.817 C 93.761 197.817 73.306 244.408 73.874 244.408 C 74.442 244.408 43.19 204.635 42.62 204.635 C 42.06 204.635 0.01 217.135 0.01 217.135 L 27.28 200.658 Z"></path>
+                <use href="#defaultTree" fill="url(#treeGrad)" />
+<!--            <path style="fill: url(#treeGrad);" d="M 27.28 200.658 C 27.28 200.658 63.647 92.134 64.215 92.703 C 64.783 93.272 134.102 0.088 134.102 0.088 L 159.67 14.861 C 159.67 14.861 104.556 104.066 103.988 104.066 C 103.42 104.066 93.192 133.612 93.192 133.612 C 93.192 133.612 144.897 220.544 144.329 220.544 C 143.761 220.544 93.761 197.817 93.761 197.817 C 93.761 197.817 73.306 244.408 73.874 244.408 C 74.442 244.408 43.19 204.635 42.62 204.635 C 42.06 204.635 0.01 217.135 0.01 217.135 L 27.28 200.658 Z"></path>-->
+            </svg>
+            <svg class="treeSvg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 245"
+            style="position:absolute;filter:url(#pixelate);right:0;transform-style: preserve-3d;transform:rotateY(180deg);">
+                <defs>
+                    <radialGradient id="treeGrad" x1="0%" x2="100%" y1="0%" y2="100%" fx="85%" fy="70%" cy="70%">
+                        <stop offset="0%" stop-color="#3b2a23" />
+                        <stop offset="100%" stop-color="#694b3f" />
+                    </radialGradient>
+                </defs>
+                <use href="#defaultTree" fill="url(#treeGrad)" />
             </svg>
         </div>
         <img src="/front.png" alt="beach" style="width: 105%;position:absolute;z-index:2;left:-3%;transform: translateX({ofsetX/700}em) translateY({$coords.y/1400}em);"/>
@@ -109,6 +120,9 @@
         <path id="defaultWave"  fill-opacity="1" 
             d="M 0 0 C 0 0 524 22 675 4 C 794 -10 1440 20 1440 20 L 1440 170 L 0 170 L 0 0 Z">
         </path>
+        <path id="defaultTree" fill-opacity="1"
+            d="M 27 201 C 27 201 64 92 64 93 C 65 93 134 0 134 0 L 160 15 C 160 15 105 104 104 104 C 103 104 93 134 93 134 C 93 134 145 221 144 221 C 144 221 94 198 94 198 C 94 198 73 244 74 244 C 74 244 43 205 43 205 C 42 205 0 217 0 217 L 27 201 Z">
+        </path>
     </svg>
 </div>
 
@@ -129,7 +143,6 @@
         z-index: 3;
         width: 25%;
         position: absolute;
-        left: -5%;
         top:-3%;
     }
 
@@ -144,9 +157,7 @@
 
         max-width:100%;
         width:auto;
-        overflow-x: hidden;
-        position: relative;
-        overflow-y: visible;
+        position:relative;
     }
     #wavesBehind{ 
         display:flex;
